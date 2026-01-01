@@ -1,0 +1,84 @@
+import Image from "next/image";
+
+function Footer() {
+  return (
+    <footer className="border-t border-gray-700 py-12 px-30 flex justify-between items-start gap-x-5 mt-12 text-sm">
+      <div className="footer-column">
+        <a
+          href=""
+          className="flex items-center gap-x-2 text-white text-lg duration-300 pr-5 py-2 font-bold hover:text-shadow-gray-500 hover:text-shadow-md"
+        >
+          <Image src="/logo.png" alt="MacWeb Logo" width={30} height={30} /> MacWeb
+        </a>
+        <div className="text-gray-100">
+          &copy; {new Date().getFullYear()}{" "}
+          <a href="https://mac-web.github.io" target="_blank" className="underline">
+            MacWeb
+          </a>
+        </div>
+        <div className="text-gray-100">All rights reserved</div>
+        <div className="text-gray-100">
+          Made with ❤️ by{" "}
+          <a href="https://github.com/tonymac129/" target="_blank" className="underline">
+            Tony Macaroni
+          </a>
+        </div>
+      </div>
+      <div className="footer-column">
+        <h2 className="text-gray-100 mb-2.5 font-bold text-base">Browse Tabs</h2>
+        <a href="" className="footer-link">
+          Home
+        </a>
+      </div>
+      <div className="footer-column">
+        <h2 className="text-gray-100 mb-2.5 font-bold text-base">MacWeb Information</h2>
+        <a href="https://mac-web.github.io/macblog/#/apps/macweb" className="footer-link" target="_blank">
+          About
+        </a>
+        <a href="https://mac-web.github.io/macblog/#/apps/macweb/updates" className="footer-link" target="_blank">
+          Updates
+        </a>
+        <a href="https://forms.gle/iacBWZAYAizBsfyt9" className="footer-link" target="_blank">
+          Feedback
+        </a>
+      </div>
+      <div className="footer-column">
+        <h2 className="text-gray-100 mb-2.5 font-bold text-base">MacWeb Apps</h2>
+        <a href="https://mac-web.github.io/macvg/" className="footer-link" target="_blank">
+          MacVG
+        </a>
+        <a href="https://mac-web.github.io/maclearn/" className="footer-link" target="_blank">
+          MacLearn
+        </a>
+        <a href="https://mac-web.github.io/macideas/" className="footer-link" target="_blank">
+          MacIdeas
+        </a>
+        <a href="https://mac-web.github.io/mactools/" className="footer-link" target="_blank">
+          MacTools
+        </a>
+        <a href="https://mac-web.github.io/macblog/" className="footer-link" target="_blank">
+          MacBlog
+        </a>
+      </div>
+      <div className="footer-column">
+        <h2 className="text-gray-100 mb-2.5 font-bold text-base">Social</h2>
+        <div className="flex gap-x-5 items-center">
+          <a href="mailto:mac.web.company@gmail.com" target="_blank" className="footer-icon" title="Email us">
+            <Image src="/icons/email.svg" alt="Email icon" width={25} height={25} />
+          </a>
+          <a href="https://www.youtube.com/@Mac-Web" target="_blank" className="footer-icon" title="YouTube">
+            <Image src="/icons/youtube.svg" alt="YouTube icon" width={25} height={25} />
+          </a>
+          <a href="https://github.com/Mac-Web/mac-web.github.io" target="_blank" className="footer-icon" title="Source code">
+            <Image src="/icons/github.svg" alt="GitHub icon" width={25} height={25} />
+          </a>
+          <a href="https://discord.gg/UT7g2S2cBP" target="_blank" className="footer-icon" title="Join our server!">
+            <Image src="/icons/discord.svg" alt="Discord icon" width={25} height={25} />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

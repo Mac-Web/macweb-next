@@ -1,65 +1,72 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import SigninBtn from "@/components/SigninBtn";
+import Card from "@/components/Card";
+import Section from "@/components/ui/Section";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <motion.div initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, type: "spring" }}>
+      <div className="flex items-center justify-center flex-col gap-y-7 pt-12 pb-25">
+        <h1 className="text-white text-4xl font-bold text-center">Welcome to MacWeb!</h1>
+        <SigninBtn />
+        <p className="text-gray-100 text-lg text-center w-[65%]">Select an app below to get started.</p>
+        <div className="flex justify-center gap-7 flex-wrap px-25">
+          <Card name="MacVG" src="/logos/macvg.png" />
+          <Card name="MacLearn" src="/logos/maclearn.png" />
+          <Card name="MacIdeas" src="/logos/macideas.png" />
+          <Card name="MacTools" src="/logos/mactools.png" />
+          <Card name="MacBlog" src="/logos/macblog.png" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+      <Section
+        title="What is MacWeb?"
+        description="MacWeb is a collection of a wide variety of different powerful web apps and platforms that help you improve, make you more productive, and provide you with top-tier entertainment experiences! We develop all kinds of online apps with extremely high quality with many features aimed to improve your experience of the internet! See more information about our apps (MacVG, MacLearn, MacIdeas, MacTools, and MacBlog) below!"
+        app="macweb"
+        color="#11288F"
+        img="/logo.png"
+      />
+      <Section
+        title="MacVG, the best online gaming platform"
+        description="MacVG is the best game site built for your entertainment with more than 400 diverse games that you can choose from. With a crazy amount of features and content, MacVG makes it easy to browse, play, and enjoy different games! The games are all optimized to be as fast and smooth as possible, and you can customize the platform however you like, tailored to your prefrences!"
+        app="macvg"
+        color="#E28B08"
+        img="/logos/macvg.png"
+        odd={true}
+      />
+      <Section
+        title="MacLearn, the web development learning platform"
+        description="Learn, strengthen, and master. Read coding tutorials on MacLearn, learn web development tips, try them in Code Playground, and create anything. In the 21st century, coding is one of the most important skills to learn and master. Learn to code now, at MacLearn. Use the platform to its fullest by saving articles, do practice quizzes, and try to collect all the achievements!"
+        app="maclearn"
+        color="#2949AE"
+        img="/logos/maclearn.png"
+      />
+      <Section
+        title="MacIdeas, the ultimate productivity tool"
+        description="MacIdeas is the ultimate productivity tool for capturing and writing down your ideas, thoughts, and anything! With the integration of tasks, notes, drawings, and more, you can manage your imagination and thoughts easily! Unfortunately, MacIdea's development is currently paused, but we'll resume development and keep improving it in the future!"
+        app="macideas"
+        color="#007F7E"
+        img="/logos/macideas.png"
+        odd={true}
+      />
+      <Section
+        title="MacTools, the extensive utilities library"
+        description="MacTools is your all in one utility app that helps you get anything done easily with powerful tools, features, and widgets ranging from math and geometry to text decoder, timer, countdown, and more! You can also pin these tools to access them instantly! Unfortunately, MacTools's development is currently paused, but we'll resume development and keep improving it in the future!"
+        app="mactools"
+        color="#0F6E10"
+        img="/logos/mactools.png"
+      />
+      <Section
+        title="MacBlog, the up to date information hub"
+        description="MacBlog is the information hub for MacWeb apps, where we put and share our ideas, updates, and articles about our apps, projects, and more! You can see posts, tips, info, and other resources about our apps here if you want to learn more about them. Note that unlike our other projects, MacBlog isn't an app, it's just an information/support center for all our other apps."
+        app="macblog"
+        color="#491E87"
+        img="/logos/macblog.png"
+        odd={true}
+      />
+      <Footer />
+    </motion.div>
   );
 }

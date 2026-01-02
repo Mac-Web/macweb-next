@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SigninModal from "./SigninModal";
 
 function SigninBtn() {
   const [signinModalOpen, setSigninModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (signinModalOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }, [signinModalOpen]);
 
   return (
     <>
@@ -14,7 +22,7 @@ function SigninBtn() {
       >
         Sign in
       </button>
-      {signinModalOpen && <SigninModal />}
+      {signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} />}
     </>
   );
 }

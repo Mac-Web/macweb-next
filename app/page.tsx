@@ -7,7 +7,7 @@ import Card from "@/components/Card";
 import Section from "@/components/ui/Section";
 import Footer from "@/components/ui/Footer";
 
-export default function Home() {
+export default function Page() {
   const { data: session } = useSession();
 
   return (

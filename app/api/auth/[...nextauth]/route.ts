@@ -77,6 +77,8 @@ const handler = NextAuth({
             image: user.image,
             provider: account?.provider,
           });
+        } else {
+          await User.findOneAndUpdate(existingUser._id, { image: user.image, provider: account?.provider });
         }
       }
       return true;

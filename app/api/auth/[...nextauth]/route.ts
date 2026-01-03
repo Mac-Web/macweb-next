@@ -1,6 +1,9 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
+import Discord from "next-auth/providers/discord";
+import Facebook from "next-auth/providers/facebook";
+import Github from "next-auth/providers/github";
 import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import bcrypt from "bcryptjs";
@@ -10,6 +13,18 @@ const handler = NextAuth({
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+    Discord({
+      clientId: process.env.DISCORD_CLIENT_ID!,
+      clientSecret: process.env.DISCORD_CLIENT_SECRET!,
+    }),
+    Facebook({
+      clientId: process.env.FACEBOOK_CLIENT_ID!,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+    }),
+    Github({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
     Credentials({
       name: "Credentials",
@@ -49,6 +64,22 @@ const handler = NextAuth({
         user.display = token.display;
       }
       return session;
+    },
+    async signIn({ user, account }) {
+      if (account?.provider !== "credentials") {
+        await dbConnect();
+        const existingUser = await User.findOne({ username: user.email });
+        if (!existingUser) {
+          await User.create({
+            username: user.email,
+            display: user.name,
+            email: user.email,
+            image: user.image,
+            provider: account?.provider,
+          });
+        }
+      }
+      return true;
     },
   },
 });

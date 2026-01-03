@@ -41,6 +41,7 @@ function NavUser({ user }: { user: Session["user"] }) {
       </motion.div>
       {menuOpen && (
         <div className="absolute right-0 top-[120%] flex flex-col rounded-lg p-2 bg-gray-900 w-35" ref={menuRef}>
+          <div className="menu-option font-bold hover:bg-gray-900! cursor-default!">{user?.name}</div>
           <Link href="/profile" className="menu-option" onClick={() => setMenuOpen(false)}>
             <FaUser size={20} />
             Profile

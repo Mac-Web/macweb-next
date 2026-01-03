@@ -28,7 +28,7 @@ function Section({ title, description, app, color, img, odd }: SectionProps) {
   const [selectedPhrase, setSelectedPhrase] = useState(0);
 
   useEffect(() => {
-    setSelectedPhrase(Math.round(Math.random() * phrases.length));
+    setSelectedPhrase(Math.floor(Math.random() * phrases.length));
   }, []);
 
   return (

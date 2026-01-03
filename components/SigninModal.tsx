@@ -4,10 +4,12 @@ import { signIn } from "next-auth/react";
 import { useState, useEffect, useRef, FormEvent } from "react";
 import { userSignUp } from "./actions";
 import { CredentialsType } from "@/types/User";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 function SigninModal({ close }: { close: () => void }) {
   const [credentials, setCredentials] = useState<CredentialsType>({ username: "", display: "", password: "" });
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<string | boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [signUp, setSignUp] = useState<boolean>(false);
   const modalBgRef = useRef<HTMLDivElement | null>(null);
@@ -67,17 +69,23 @@ function SigninModal({ close }: { close: () => void }) {
     }
   }
 
-  function handleGoogleSignIn() {
-    signIn("google");
-    setLoading(true);
+  function handleOAuthSignin(provider: string) {
+    signIn(provider);
+    setLoading(provider);
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className="fixed top-0 left-0 w-screen h-screen bg-gray-900/80 flex justify-center items-center z-50 backdrop-blur-sm"
       ref={modalBgRef}
     >
-      <form
+      <motion.form
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
         onSubmit={(e) => {
           if (signUp) {
             handleSignUp(e);
@@ -85,89 +93,86 @@ function SigninModal({ close }: { close: () => void }) {
             handleSignIn(e);
           }
         }}
-        className="bg-gray-950 rounded flex flex-col gap-y-5 items-center py-8 px-10 w-100"
+        className="bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-100 relative"
       >
-        <h2 className="text-2xl text-white font-bold">Sign {signUp ? "up for" : "in to"} MacWeb</h2>
-        <div className="flex flex-col gap-y-2 w-full">
-          {error && (
-            <div className="text-red-600 w-full">
-              {signUp ? "That username is in use" : "Login failed, check your credentials"}
-            </div>
-          )}
-          <input
-            value={credentials.username}
-            onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
-            type="text"
-            placeholder="Username"
-            className="modal-input"
-          />
-          {signUp && (
+        <Image src="/logo.png" alt="MacWeb Logo" width={45} height={45} className=" -top-10" />
+        <div className="w-full flex flex-col items-center gap-y-5">
+          <h2 className="text-2xl text-white font-bold">Sign {signUp ? "up for" : "in to"} MacWeb</h2>
+          <div className="flex flex-col gap-y-2 w-full">
+            {error && (
+              <div className="text-red-600 w-full">
+                {signUp ? "That username is in use" : "Login failed, check your credentials"}
+              </div>
+            )}
             <input
-              value={credentials.display}
-              onChange={(e) => setCredentials({ ...credentials, display: e.target.value })}
+              value={credentials.username}
+              onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
               type="text"
-              placeholder="Display name"
+              placeholder="Username"
               className="modal-input"
             />
-          )}
-          <input
-            value={credentials.password}
-            onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
-            type="password"
-            placeholder="Password"
-            className="modal-input"
-          />
-          <button
-            className="bg-blue-600 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
+            {signUp && (
+              <input
+                value={credentials.display}
+                onChange={(e) => setCredentials({ ...credentials, display: e.target.value })}
+                type="text"
+                placeholder="Display name"
+                className="modal-input"
+              />
+            )}
+            <input
+              value={credentials.password}
+              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+              type="password"
+              placeholder="Password"
+              className="modal-input"
+            />
+            <button
+              className="bg-blue-600 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
          hover:bg-blue-700 duration-300"
-          >
-            {loading ? "Loading..." : signUp ? "Sign up" : "Sign in"}
-          </button>
-          {signUp ? (
-            <div className="text-sm text-gray-300 w-full">
-              Already have an account?{" "}
-              <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(false)}>
-                Sign in
-              </span>
-            </div>
-          ) : (
-            <div className="text-sm text-gray-300 w-full">
-              Don&apos;t have an account yet?{" "}
-              <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(true)}>
-                Sign up
-              </span>
-            </div>
-          )}
+            >
+              {loading === true ? "Loading..." : signUp ? "Sign up" : "Sign in"}
+            </button>
+            {signUp ? (
+              <div className="text-sm text-gray-300 w-full">
+                Already have an account?{" "}
+                <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(false)}>
+                  Sign in
+                </span>
+              </div>
+            ) : (
+              <div className="text-sm text-gray-300 w-full">
+                Don&apos;t have an account yet?{" "}
+                <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(true)}>
+                  Sign up
+                </span>
+              </div>
+            )}
+          </div>
+          <div className="bg-gray-700 w-full h-0.5 relative">
+            <span className="absolute left-[50%] -translate-x-[50%] text-gray-100 -translate-y-[50%] px-4 bg-gray-950">or</span>
+          </div>
+          <div className="flex flex-col gap-y-2 w-full">
+            <button onClick={() => handleOAuthSignin("google")} type="button" className="oauth-btn">
+              <Image src="/oauth/google.webp" alt="Google Logo" width={25} height={25} />
+              {loading === "google" ? "Loading..." : "Sign in with Google"}
+            </button>
+            <button type="button" onClick={() => handleOAuthSignin("discord")} className="oauth-btn">
+              <Image src="/oauth/discord.png" alt="Google Logo" width={25} height={25} />
+              {loading === "discord" ? "Loading..." : "Sign in with Discord"}
+            </button>
+            <button type="button" onClick={() => handleOAuthSignin("facebook")} className="oauth-btn">
+              <Image src="/oauth/facebook.png" alt="Google Logo" width={25} height={25} />
+              {loading === "facebook" ? "Loading..." : "Sign in with Facebook"}
+            </button>
+            <button onClick={() => handleOAuthSignin("github")} type="button" className="oauth-btn">
+              <Image src="/oauth/github.png" alt="Google Logo" width={25} height={25} />
+              {loading === "github" ? "Loading..." : "Sign in with GitHub"}
+            </button>
+          </div>
         </div>
-        <div className="bg-gray-700 w-full h-0.5 relative">
-          <span className="absolute left-[50%] -translate-x-[50%] text-gray-100 -translate-y-[50%] px-4 bg-gray-950">or</span>
-        </div>
-        <div className="flex flex-col gap-y-2 w-full">
-          <button
-            onClick={handleGoogleSignIn}
-            type="button"
-            className="bg-gray-900 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
-         hover:bg-gray-800 duration-300"
-          >
-            {loading ? "Loading..." : "Sign in with Google"}
-          </button>
-          <button
-            type="button"
-            className="bg-gray-900 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
-         hover:bg-gray-800 duration-300"
-          >
-            Sign in with Facebook
-          </button>
-          <button
-            type="button"
-            className="bg-gray-900 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
-         hover:bg-gray-800 duration-300"
-          >
-            Sign in with Apple
-          </button>
-        </div>
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   );
 }
 

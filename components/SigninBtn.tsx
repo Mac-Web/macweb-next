@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import SigninModal from "./SigninModal";
 
 function SigninBtn() {
@@ -22,7 +23,7 @@ function SigninBtn() {
       >
         Sign in
       </button>
-      {signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} />}
+      <AnimatePresence>{signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} />}</AnimatePresence>
     </>
   );
 }

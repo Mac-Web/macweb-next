@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizeCss: false,
+  },
 };
 
 export default nextConfig;

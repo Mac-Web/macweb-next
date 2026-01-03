@@ -18,7 +18,7 @@ function SigninBtn() {
   return (
     <>
       <button
-        className="bg-blue-600 rounded-lg text-white text-lg font-bold py-2 px-5 cursor-pointer hover:bg-blue-700 duration-300"
+        className="bg-blue-600 rounded text-white text-lg font-bold py-1.5 px-4 cursor-pointer hover:bg-blue-700 duration-300"
         onClick={() => setSigninModalOpen(true)}
       >
         Sign in

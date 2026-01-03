@@ -21,6 +21,9 @@ const UserSchema = new Schema(
     provider: {
       type: String,
     },
+    about: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

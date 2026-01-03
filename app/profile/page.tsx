@@ -1,23 +1,52 @@
+import { getServerSession } from "next-auth";
+import { dbConnect } from "@/lib/db";
+import { User } from "@/models/User";
+import { FaTrophy } from "react-icons/fa6";
+import { IoGameController } from "react-icons/io5";
+import { MdArticle } from "react-icons/md";
+import About from "./About";
 import Profile from "./Profile";
+import SigninBtn from "@/components/SigninBtn";
 
-function Page() {
+async function Page() {
+  const session = await getServerSession();
+  await dbConnect();
+  const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
+  const existingUser = JSON.parse(JSON.stringify(res));
+
   return (
     <div className="flex py-5 px-30 gap-x-5">
-      <Profile />
-      <div className="flex-1 flex flex-col gap-y-5">
-        <div className="bg-gray-900 rounded-lg py-5 px-10">
-          <h2 className="text-white text-xl font-bold mb-5">About</h2>
-          <p className="text-gray-100">About coming soon!</p>
+      {session?.user ? (
+        <>
+          <Profile existingUser={existingUser} />
+          <div className="flex-1 flex flex-col gap-y-5">
+            <About existingUser={existingUser} />
+            <div className="profile-section">
+              <h2 className="profile-header">
+                <FaTrophy size={25} /> Achievements
+              </h2>
+              <p className="text-gray-100">Achievements coming soon!</p>
+            </div>
+            <div className="profile-section">
+              <h2 className="profile-header">
+                <IoGameController size={25} /> Favorited Games
+              </h2>
+              <p className="text-gray-100">Favorited games coming soon!</p>
+            </div>
+            <div className="profile-section">
+              <h2 className="profile-header">
+                <MdArticle size={25} /> Favorited Articles
+              </h2>
+              <p className="text-gray-100">Favorited articles coming soon!</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-col gap-y-10 items-center justify-center w-full h-100">
+          <h2 className="text-white text-xl font-bold">Sign in to access user profile</h2>
+          <SigninBtn />
         </div>
-        <div className="bg-gray-900 rounded-lg py-5 px-10">
-          <h2 className="text-white text-xl font-bold mb-5">Achievements</h2>
-          <p className="text-gray-100">Achievements coming soon!</p>
-        </div>
-        <div className="bg-gray-900 rounded-lg py-5 px-10">
-          <h2 className="text-white text-xl font-bold mb-5">Favorited Games</h2>
-          <p className="text-gray-100">Favorited games coming soon!</p>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

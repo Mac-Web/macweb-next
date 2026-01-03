@@ -7,6 +7,8 @@ import { CredentialsType } from "@/types/User";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const oAuthProviders = ["google", "discord", "facebook", "github"];
+
 function SigninModal({ close }: { close: () => void }) {
   const [credentials, setCredentials] = useState<CredentialsType>({ username: "", display: "", password: "" });
   const [loading, setLoading] = useState<string | boolean>(false);
@@ -153,22 +155,21 @@ function SigninModal({ close }: { close: () => void }) {
             <span className="absolute left-[50%] -translate-x-[50%] text-gray-100 -translate-y-[50%] px-4 bg-gray-950">or</span>
           </div>
           <div className="flex flex-col gap-y-2 w-full">
-            <button onClick={() => handleOAuthSignin("google")} type="button" className="oauth-btn">
-              <Image src="/oauth/google.webp" alt="Google Logo" width={25} height={25} />
-              {loading === "google" ? "Loading..." : "Sign in with Google"}
-            </button>
-            <button type="button" onClick={() => handleOAuthSignin("discord")} className="oauth-btn">
-              <Image src="/oauth/discord.png" alt="Google Logo" width={25} height={25} />
-              {loading === "discord" ? "Loading..." : "Sign in with Discord"}
-            </button>
-            <button type="button" onClick={() => handleOAuthSignin("facebook")} className="oauth-btn">
-              <Image src="/oauth/facebook.png" alt="Google Logo" width={25} height={25} />
-              {loading === "facebook" ? "Loading..." : "Sign in with Facebook"}
-            </button>
-            <button onClick={() => handleOAuthSignin("github")} type="button" className="oauth-btn">
-              <Image src="/oauth/github.png" alt="Google Logo" width={25} height={25} />
-              {loading === "github" ? "Loading..." : "Sign in with GitHub"}
-            </button>
+            {oAuthProviders.map((provider: string, i: number) => {
+              const capitalized = provider[0].toUpperCase() + provider.slice(1);
+              return (
+                <button key={i} onClick={() => handleOAuthSignin(provider)} type="button" className="oauth-btn">
+                  <Image
+                    src={`/oauth/${provider}.png`}
+                    alt={`${capitalized} Logo`}
+                    title={`${capitalized} Logo`}
+                    width={25}
+                    height={25}
+                  />
+                  {loading === provider ? "Loading..." : "Sign in with " + capitalized}
+                </button>
+              );
+            })}
           </div>
         </div>
       </motion.form>

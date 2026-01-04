@@ -5,7 +5,12 @@ import { UserType } from "@/types/User";
 import { updateAbout } from "./actions";
 import { FaCircleInfo } from "react-icons/fa6";
 
-function About({ existingUser }: { existingUser: UserType }) {
+type AboutProps = {
+  existingUser: UserType;
+  viewer?: boolean;
+};
+
+function About({ existingUser, viewer }: AboutProps) {
   const [editing, setEditing] = useState<boolean>(false);
   const [text, setText] = useState<string>(existingUser?.about || "");
   const [localUser, setLocalUser] = useState<UserType>({ ...existingUser });
@@ -37,12 +42,14 @@ function About({ existingUser }: { existingUser: UserType }) {
       ) : (
         <p className="text-gray-100">{localUser.about || "No about information added"}</p>
       )}
-      <button
-        className="bg-blue-600 rounded cursor-pointer text-white py-1 px-4 hover:bg-blue-700 duration-300 w-fit"
-        onClick={() => handleEdit()}
-      >
-        {editing ? "Save" : "Edit"}
-      </button>
+      {!viewer && (
+        <button
+          className="bg-blue-600 rounded cursor-pointer text-white py-1 px-4 hover:bg-blue-700 duration-300 w-fit"
+          onClick={() => handleEdit()}
+        >
+          {editing ? "Save" : "Edit"}
+        </button>
+      )}
     </div>
   );
 }

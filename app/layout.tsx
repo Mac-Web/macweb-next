@@ -12,6 +12,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Home | MacWeb",
   description: "MacWeb, your best internet bud for productivity, entertainment, and more!",
+  authors: [{ name: "MacWeb", url: "https://macweb-next.vercel.app" }],
+  openGraph: {
+    title: "MacWeb",
+    description: "MacWeb, your best internet bud for productivity, entertainment, and more!",
+    url: "https://macweb-next.vercel.app",
+    siteName: "MacWeb",
+    images: [
+      {
+        url: "/logo.png",
+        width: 500,
+        height: 500,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({

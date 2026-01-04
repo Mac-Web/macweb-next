@@ -4,8 +4,16 @@ import { BiCalendar } from "react-icons/bi";
 import { UserType } from "@/types/User";
 import CopyBtn from "./CopyBtn";
 import Image from "next/image";
+import Link from "next/link";
+import DeleteBtn from "./DeleteBtn";
+import ShareBtn from "./ShareBtn";
 
-function Profile({ existingUser }: { existingUser: UserType }) {
+type ProfileProps = {
+  existingUser: UserType;
+  viewer?: boolean;
+};
+
+function Profile({ existingUser, viewer }: ProfileProps) {
   return (
     <div className="flex flex-col gap-y-7 rounded-lg bg-gray-900 w-85 p-10 h-fit">
       {existingUser.image ? (
@@ -14,7 +22,7 @@ function Profile({ existingUser }: { existingUser: UserType }) {
           alt={existingUser.display + " Avatar"}
           width={150}
           height={150}
-          className="rounded-full cursor-pointer"
+          className={`rounded-full ${viewer ? "" : "cursor-pointer"}`}
         />
       ) : (
         <FaUser size={150} className="rounded-full border-5 border-gray-700 cursor-pointer" color="white" />
@@ -22,6 +30,14 @@ function Profile({ existingUser }: { existingUser: UserType }) {
       <div className="flex flex-col gap-y-1">
         <h2 className="text-white text-3xl font-bold">{existingUser.display}</h2>
         <div className="text-gray-100">{existingUser.username}</div>
+        {!viewer && (
+          <div className="flex gap-x-5">
+            <Link href={`/profile/${existingUser?._id}`} className="w-fit text-blue-600 hover:underline">
+              View profile
+            </Link>
+            <ShareBtn id={existingUser?._id} />
+          </div>
+        )}
       </div>
       {existingUser.email && (
         <div className="flex items-center gap-x-3 text-gray-100">
@@ -43,6 +59,7 @@ function Profile({ existingUser }: { existingUser: UserType }) {
           height={25}
         />
       )}
+      {!viewer && <DeleteBtn existingUser={existingUser} />}
     </div>
   );
 }

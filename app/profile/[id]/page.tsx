@@ -1,32 +1,30 @@
-import { getServerSession } from "next-auth";
 import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import { FaTrophy } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { MdArticle } from "react-icons/md";
-import About from "./About";
-import Profile from "./Profile";
-import SigninBtn from "@/components/SigninBtn";
+import About from "../About";
+import Profile from "../Profile";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My Profile | MacWeb",
-  description: "Customize your own profile with a custom display name, profile image, about, and more!",
+  title: "User Profile | MacWeb",
+  description: "View another person's MacWeb profile, including their about, achievements, favorited games/articles, and more!",
 };
 
-async function Page() {
-  const session = await getServerSession();
+async function Page({ params }: { params: { id: string } }) {
+  const { id } = await params;
   await dbConnect();
-  const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
+  const res = await User.findById(id).lean();
   const existingUser = JSON.parse(JSON.stringify(res));
 
   return (
     <div className="flex py-5 px-30 gap-x-5">
-      {session?.user ? (
+      {existingUser ? (
         <>
-          <Profile existingUser={existingUser} />
+          <Profile existingUser={existingUser} viewer={true} />
           <div className="flex-1 flex flex-col gap-y-5">
-            <About existingUser={existingUser} />
+            <About existingUser={existingUser} viewer={true} />
             <div className="profile-section">
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
@@ -48,10 +46,7 @@ async function Page() {
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-y-10 items-center justify-center w-full h-100">
-          <h2 className="text-white text-xl font-bold">Sign in to access user profile</h2>
-          <SigninBtn />
-        </div>
+        <div>df</div>
       )}
     </div>
   );

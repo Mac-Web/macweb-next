@@ -6,18 +6,18 @@ function Footer() {
       <div className="footer-column">
         <a
           href=""
-          className="flex items-center gap-x-2 text-white text-lg duration-300 pr-5 py-2 font-bold hover:text-shadow-gray-500 hover:text-shadow-md"
+          className="flex items-center gap-x-2 text-black dark:text-white text-lg duration-300 pr-5 py-2 font-bold hover:text-shadow-gray-400 hover:text-shadow-sm"
         >
           <Image src="/logo.png" alt="MacWeb Logo" width={30} height={30} /> MacWeb
         </a>
-        <div className="text-gray-100">
+        <div className="text-gray-800 dark:text-gray-100">
           &copy; {new Date().getFullYear()}{" "}
           <a href="https://mac-web.github.io" target="_blank" className="underline">
             MacWeb
           </a>
         </div>
-        <div className="text-gray-100">All rights reserved</div>
-        <div className="text-gray-100">
+        <div className="text-gray-800 dark:text-gray-100">All rights reserved</div>
+        <div className="text-gray-800 dark:text-gray-100">
           Made with ❤️ by{" "}
           <a href="https://github.com/tonymac129/" target="_blank" className="underline">
             Tony Macaroni
@@ -25,13 +25,13 @@ function Footer() {
         </div>
       </div>
       <div className="footer-column">
-        <h2 className="text-gray-100 mb-2.5 font-bold text-base">Browse Tabs</h2>
+        <h2 className="footer-column-title">Browse Tabs</h2>
         <a href="" className="footer-link">
           Home
         </a>
       </div>
       <div className="footer-column">
-        <h2 className="text-gray-100 mb-2.5 font-bold text-base">MacWeb Information</h2>
+        <h2 className="footer-column-title">MacWeb Information</h2>
         <a href="https://mac-web.github.io/macblog/#/apps/macweb" className="footer-link" target="_blank">
           About
         </a>
@@ -43,7 +43,7 @@ function Footer() {
         </a>
       </div>
       <div className="footer-column">
-        <h2 className="text-gray-100 mb-2.5 font-bold text-base">MacWeb Apps</h2>
+        <h2 className="footer-column-title">MacWeb Apps</h2>
         <a href="https://mac-web.github.io/macvg/" className="footer-link" target="_blank">
           MacVG
         </a>
@@ -61,19 +61,19 @@ function Footer() {
         </a>
       </div>
       <div className="footer-column">
-        <h2 className="text-gray-100 mb-2.5 font-bold text-base">Social</h2>
+        <h2 className="footer-column-title">Social</h2>
         <div className="flex gap-x-5 items-center">
           <a href="mailto:mac.web.company@gmail.com" target="_blank" className="footer-icon" title="Email us">
-            <Image src="/icons/email.svg" alt="Email icon" width={25} height={25} />
+            <Image src="/icons/email.svg" alt="Email icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
           <a href="https://www.youtube.com/@Mac-Web" target="_blank" className="footer-icon" title="YouTube">
-            <Image src="/icons/youtube.svg" alt="YouTube icon" width={25} height={25} />
+            <Image src="/icons/youtube.svg" alt="YouTube icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
           <a href="https://github.com/Mac-Web/mac-web.github.io" target="_blank" className="footer-icon" title="Source code">
-            <Image src="/icons/github.svg" alt="GitHub icon" width={25} height={25} />
+            <Image src="/icons/github.svg" alt="GitHub icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
           <a href="https://discord.gg/UT7g2S2cBP" target="_blank" className="footer-icon" title="Join our server!">
-            <Image src="/icons/discord.svg" alt="Discord icon" width={25} height={25} />
+            <Image src="/icons/discord.svg" alt="Discord icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
         </div>
       </div>

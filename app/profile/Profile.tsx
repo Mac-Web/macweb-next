@@ -15,7 +15,7 @@ type ProfileProps = {
 
 function Profile({ existingUser, viewer }: ProfileProps) {
   return (
-    <div className="flex flex-col gap-y-7 rounded-lg bg-gray-900 w-85 p-10 h-fit">
+    <div className="flex flex-col gap-y-7 rounded-lg bg-gray-300 dark:bg-gray-900 w-85 p-10 h-fit">
       {existingUser.image ? (
         <Image
           src={existingUser.image}
@@ -25,11 +25,11 @@ function Profile({ existingUser, viewer }: ProfileProps) {
           className={`rounded-full ${viewer ? "" : "cursor-pointer"}`}
         />
       ) : (
-        <FaUser size={150} className="rounded-full border-5 border-gray-700 cursor-pointer" color="white" />
+        <FaUser size={150} className="rounded-full border-5 border-gray-300 dark:border-gray-700 cursor-pointer" color="white" />
       )}
       <div className="flex flex-col gap-y-1">
-        <h2 className="text-white text-3xl font-bold">{existingUser.display}</h2>
-        <div className="text-gray-100">{existingUser.username}</div>
+        <h2 className="text-black dark:text-white text-3xl font-bold">{existingUser.display}</h2>
+        <div className="text-gray-800 dark:text-gray-100">{existingUser.username}</div>
         {!viewer && (
           <div className="flex gap-x-5">
             <Link href={`/profile/${existingUser?._id}`} className="w-fit text-blue-600 hover:underline">
@@ -40,14 +40,14 @@ function Profile({ existingUser, viewer }: ProfileProps) {
         )}
       </div>
       {existingUser.email && (
-        <div className="flex items-center gap-x-3 text-gray-100">
+        <div className="flex items-center gap-x-3 text-gray-800 dark:text-gray-100">
           <MdEmail size={25} title="Email" /> {existingUser.email}
         </div>
       )}
-      <div className="flex items-center gap-x-3 text-gray-100">
+      <div className="flex items-center gap-x-3 text-gray-800 dark:text-gray-100">
         <BiCalendar size={25} title="Account created" /> {new Date(existingUser.createdAt).toLocaleDateString()}
       </div>
-      <div className="flex items-center gap-x-3 text-gray-100">
+      <div className="flex items-center gap-x-3 text-gray-800 dark:text-gray-100">
         <CopyBtn userID={existingUser._id.toString()} /> {existingUser._id.toString()}
       </div>
       {existingUser.provider && (

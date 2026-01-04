@@ -34,13 +34,13 @@ function About({ existingUser, viewer }: AboutProps) {
       </h2>
       {editing ? (
         <textarea
-          className="text-gray-100 resize-none outline-2 outline-gray-700 rounded py-2 px-4"
+          className="text-gray-800 dark:text-gray-100 resize-none outline-2 outline-gray-400 dark:outline-gray-700 rounded py-2 px-4"
           value={text}
           placeholder="Put something unique about you..."
           onChange={(e) => setText(e.target.value)}
         ></textarea>
       ) : (
-        <p className="text-gray-100">{localUser.about || "No about information added"}</p>
+        <p className="text-gray-800 dark:text-gray-100">{localUser.about || "No about information added"}</p>
       )}
       {!viewer && (
         <button

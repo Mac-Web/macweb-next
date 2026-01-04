@@ -13,9 +13,9 @@ export default function Page() {
   return (
     <motion.div initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, type: "spring" }}>
       <div className="flex items-center justify-center flex-col gap-y-7 pt-12 pb-25">
-        <h1 className="text-white text-4xl font-bold text-center">Welcome to MacWeb!</h1>
+        <h1 className="text-black dark:text-white text-4xl font-bold text-center">Welcome to MacWeb!</h1>
         {!session && <SigninBtn />}
-        <p className="text-gray-100 text-lg text-center w-[65%]">Select an app below to get started.</p>
+        <p className="text-gray-800 dark:text-gray-100 text-lg text-center w-[65%]">Select an app below to get started.</p>
         <div className="flex justify-center gap-7 flex-wrap px-25">
           <Card name="MacVG" src="/logos/macvg.png" />
           <Card name="MacLearn" src="/logos/maclearn.png" />

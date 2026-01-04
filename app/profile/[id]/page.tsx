@@ -29,19 +29,19 @@ async function Page({ params }: { params: { id: string } }) {
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
               </h2>
-              <p className="text-gray-100">Achievements coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Achievements coming soon!</p>
             </div>
             <div className="profile-section">
               <h2 className="profile-header">
                 <IoGameController size={25} /> Favorited Games
               </h2>
-              <p className="text-gray-100">Favorited games coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Favorited games coming soon!</p>
             </div>
             <div className="profile-section">
               <h2 className="profile-header">
                 <MdArticle size={25} /> Favorited Articles
               </h2>
-              <p className="text-gray-100">Favorited articles coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Favorited articles coming soon!</p>
             </div>
           </div>
         </>

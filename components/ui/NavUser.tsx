@@ -5,11 +5,13 @@ import { signOut } from "next-auth/react";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { FaUser } from "react-icons/fa";
-import { MdDarkMode, MdLogout } from "react-icons/md";
+import { MdDarkMode, MdLogout, MdLightMode } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 function NavUser({ user }: { user: Session["user"] }) {
+  const { theme, setTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
@@ -40,18 +42,24 @@ function NavUser({ user }: { user: Session["user"] }) {
         )}
       </motion.div>
       {menuOpen && (
-        <div className="absolute right-0 top-[120%] flex flex-col rounded-lg p-2 bg-gray-900 w-35" ref={menuRef}>
-          <div className="menu-option font-bold hover:bg-gray-900! cursor-default!">{user?.name}</div>
-          <Link href="/profile" className="menu-option" onClick={() => setMenuOpen(false)}>
-            <FaUser size={20} />
+        <div className="absolute right-0 top-[120%] flex flex-col rounded-lg p-2 bg-gray-100 dark:bg-gray-900 w-35" ref={menuRef}>
+          <div className="menu-option group font-bold hover:bg-gray-100!  dark:hover:bg-gray-900! cursor-default!">
+            {user?.name}
+          </div>
+          <Link href="/profile" className="menu-option group" onClick={() => setMenuOpen(false)}>
+            <FaUser size={20} className="group-hover:scale-120 group-hover:-translate-y-1 duration-300" />
             Profile
           </Link>
-          <div className="menu-option">
-            <MdDarkMode size={20} />
+          <div className="menu-option group" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+            {theme === "light" ? (
+              <MdLightMode size={20} className="group-hover:scale-120 group-hover:-translate-y-1 duration-300" />
+            ) : (
+              <MdDarkMode size={20} className="group-hover:scale-120 group-hover:-translate-y-1 duration-300" />
+            )}
             Theme
           </div>
-          <div className="menu-option" onClick={() => signOut()}>
-            <MdLogout size={20} />
+          <div className="menu-option group" onClick={() => signOut()}>
+            <MdLogout className="group-hover:scale-120 group-hover:-translate-y-1 duration-300" size={20} />
             Log out
           </div>
         </div>

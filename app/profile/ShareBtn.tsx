@@ -1,10 +1,13 @@
 "use client";
 
 function ShareBtn({ id }: { id: string }) {
-  const url = process.env.NEXT_PUBLIC_ROOT_URL!;
+  function handleShare() {
+    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_ROOT_URL}/profile/${id}`);
+    alert("Public profile link copied to clipboard!");
+  }
 
   return (
-    <div onClick={() => navigator.clipboard.writeText(`${url}/profile/${id}`)} className="w-fit text-blue-600 hover:underline">
+    <div onClick={handleShare} className="w-fit text-blue-600 hover:underline cursor-pointer">
       Share profile
     </div>
   );

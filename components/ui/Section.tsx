@@ -49,15 +49,15 @@ function Section({ title, description, app, color, img, odd }: SectionProps) {
         />
       )}
       <div className="flex flex-col gap-y-7">
-        <h2 className="text-white text-3xl font-bold">{title}</h2>
-        <p className="text-gray-100 text-lg">{description}</p>
+        <h2 className="text-black dark:text-white text-3xl font-bold">{title}</h2>
+        <p className="text-gray-900 dark:text-gray-100 text-lg">{description}</p>
         <div className="flex gap-x-7">
           {app != "macweb" && (
             <motion.a
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.7, type: "spring" }}
               href={`https://mac-web.github.io/${app}/`}
-              className="section-btn action"
+              className="section-btn action text-white!"
               style={{ borderColor: color, backgroundColor: color }}
             >
               {phrases[selectedPhrase]}

@@ -31,25 +31,25 @@ async function Page() {
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
               </h2>
-              <p className="text-gray-100">Achievements coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Achievements coming soon!</p>
             </div>
             <div className="profile-section">
               <h2 className="profile-header">
                 <IoGameController size={25} /> Favorited Games
               </h2>
-              <p className="text-gray-100">Favorited games coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Favorited games coming soon!</p>
             </div>
             <div className="profile-section">
               <h2 className="profile-header">
                 <MdArticle size={25} /> Favorited Articles
               </h2>
-              <p className="text-gray-100">Favorited articles coming soon!</p>
+              <p className="text-gray-800 dark:text-gray-100">Favorited articles coming soon!</p>
             </div>
           </div>
         </>
       ) : (
         <div className="flex flex-col gap-y-10 items-center justify-center w-full h-100">
-          <h2 className="text-white text-xl font-bold">Sign in to access user profile</h2>
+          <h2 className="text-black dark:text-white text-xl font-bold">Sign in to access user profile</h2>
           <SigninBtn />
         </div>
       )}

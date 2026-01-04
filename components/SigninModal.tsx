@@ -81,7 +81,7 @@ function SigninModal({ close }: { close: () => void }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed top-0 left-0 w-screen h-screen bg-gray-900/80 flex justify-center items-center z-50 backdrop-blur-sm"
+      className="fixed top-0 left-0 w-screen h-screen bg-gray-300/80 dark:bg-gray-900/80 flex justify-center items-center z-50 backdrop-blur-sm"
       ref={modalBgRef}
     >
       <motion.form
@@ -95,11 +95,11 @@ function SigninModal({ close }: { close: () => void }) {
             handleSignIn(e);
           }
         }}
-        className="bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-100 relative"
+        className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-100 relative"
       >
         <Image src="/logo.png" alt="MacWeb Logo" width={45} height={45} className=" -top-10" />
         <div className="w-full flex flex-col items-center gap-y-5">
-          <h2 className="text-2xl text-white font-bold">Sign {signUp ? "up for" : "in to"} MacWeb</h2>
+          <h2 className="text-2xl text-black dark:text-white font-bold">Sign {signUp ? "up for" : "in to"} MacWeb</h2>
           <div className="flex flex-col gap-y-2 w-full">
             {error && (
               <div className="text-red-600 w-full">
@@ -136,14 +136,14 @@ function SigninModal({ close }: { close: () => void }) {
               {loading === true ? "Loading..." : signUp ? "Sign up" : "Sign in"}
             </button>
             {signUp ? (
-              <div className="text-sm text-gray-300 w-full">
+              <div className="text-sm text-gray-800 dark:text-gray-300 w-full">
                 Already have an account?{" "}
                 <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(false)}>
                   Sign in
                 </span>
               </div>
             ) : (
-              <div className="text-sm text-gray-300 w-full">
+              <div className="text-sm text-gray-800 dark:text-gray-300 w-full">
                 Don&apos;t have an account yet?{" "}
                 <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(true)}>
                   Sign up
@@ -151,8 +151,10 @@ function SigninModal({ close }: { close: () => void }) {
               </div>
             )}
           </div>
-          <div className="bg-gray-700 w-full h-0.5 relative">
-            <span className="absolute left-[50%] -translate-x-[50%] text-gray-100 -translate-y-[50%] px-4 bg-gray-950">or</span>
+          <div className="bg-gray-400 dark:bg-gray-700 w-full h-0.5 relative">
+            <span className="absolute left-[50%] -translate-x-[50%] text-gray-800 dark:text-gray-100 -translate-y-[50%] px-4 bg-gray-100 dark:bg-gray-950">
+              or
+            </span>
           </div>
           <div className="flex flex-col gap-y-2 w-full">
             {oAuthProviders.map((provider: string, i: number) => {
@@ -165,6 +167,7 @@ function SigninModal({ close }: { close: () => void }) {
                     title={`${capitalized} Logo`}
                     width={25}
                     height={25}
+                    className={`${provider === "github" ? "invert" : ""} dark:invert-0`}
                   />
                   {loading === provider ? "Loading..." : "Sign in with " + capitalized}
                 </button>

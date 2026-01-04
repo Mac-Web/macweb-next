@@ -5,6 +5,13 @@ import { getSession } from "next-auth/react";
 import { deleteAccount } from "./actions";
 import { signOut } from "next-auth/react";
 
+type SessionUserType = {
+  name?: string;
+  email?: string;
+  image?: string;
+  id: string;
+};
+
 function DeleteBtn({ existingUser }: { existingUser: UserType }) {
   async function handleDelete() {
     if (
@@ -14,7 +21,8 @@ function DeleteBtn({ existingUser }: { existingUser: UserType }) {
       )
     ) {
       const session = await getSession();
-      await deleteAccount(existingUser._id, session?.user?.id);
+      const sessionUser = session?.user as SessionUserType;
+      await deleteAccount(existingUser._id, sessionUser?.id);
       signOut();
     }
   }

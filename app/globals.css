@@ -1,24 +1,26 @@
 @import "tailwindcss";
-@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   scrollbar-gutter: stable;
+  @apply duration-300;
 }
 
 body {
-  @apply bg-gray-950;
+  @apply bg-gray-200 dark:bg-gray-950 duration-300;
 }
 
 .nav-link {
-  @apply text-gray-300 transition-colors p-2.5 hover:text-blue-600;
+  @apply text-gray-800 dark:text-gray-300 transition-colors p-2.5 hover:text-blue-600;
 }
 
 .modal-input {
-  @apply bg-gray-900 rounded w-full text-lg text-white outline-0 py-2 px-4;
+  @apply bg-gray-200 dark:bg-gray-900 rounded w-full text-lg text-black dark:text-white outline-0 py-2 px-4;
 }
 
 .section-btn {
-  @apply border-2 rounded-full text-white text-lg py-2 px-5;
+  @apply border-2 rounded-full text-black dark:text-white text-lg py-2 px-5;
 }
 
 .footer-column {
@@ -26,7 +28,7 @@ body {
 }
 
 .footer-link {
-  @apply text-gray-100 hover:underline w-fit;
+  @apply text-gray-800 dark:text-gray-100 hover:underline w-fit;
 }
 
 .modal-open {
@@ -34,17 +36,24 @@ body {
 }
 
 .menu-option {
-  @apply flex gap-x-3 items-center text-gray-100 py-2 px-3 hover:bg-gray-800 cursor-pointer duration-300 rounded;
+  @apply flex gap-x-3 items-center text-gray-800 dark:text-gray-100 py-2 px-3 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer duration-300 rounded;
+}
+
+.footer-column-title {
+  @apply text-gray-800 dark:text-gray-100 mb-2.5 font-bold text-base;
 }
 
 .oauth-btn {
-  @apply bg-gray-900 rounded w-full text-white text-lg cursor-pointer py-2 font-bold hover:bg-gray-800 duration-300 flex items-center justify-start px-5 gap-x-5;
+  @apply bg-gray-200 dark:bg-gray-900 rounded w-full text-black dark:text-white text-lg cursor-pointer py-2
+  font-bold hover:bg-gray-300 dark:hover:bg-gray-800 duration-300 flex items-center justify-start px-5 gap-x-5;
 }
 
 .profile-header {
-  @apply text-white text-xl font-bold flex items-center gap-x-3;
+  @apply text-black dark:text-white text-xl font-bold flex items-center gap-x-3;
 }
 
 .profile-section {
-  @apply bg-gray-900 rounded-lg py-5 px-10 flex flex-col gap-y-5;
+  @apply bg-gray-300 dark:bg-gray-900 rounded-lg py-5 px-10 flex flex-col gap-y-5;
 }
+
+/* TODO: don't directly put apply directives in globals.css make separate stylsheets for components */

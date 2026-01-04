@@ -5,6 +5,13 @@ import { User } from "@/models/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
+type SessionUserType = {
+  name?: string;
+  email?: string;
+  image?: string;
+  id: string;
+};
+
 export async function updateAbout(id: string, about: string) {
   try {
     await dbConnect();
@@ -20,7 +27,8 @@ export async function updateAbout(id: string, about: string) {
 export async function deleteAccount(id: string, tokenID: string) {
   try {
     const session = await getServerSession(authOptions);
-    if (session?.user?.id === tokenID) {
+    const sessionUser = session?.user as SessionUserType;
+    if (sessionUser.id === tokenID) {
       await dbConnect();
       await User.findByIdAndDelete(id);
     }

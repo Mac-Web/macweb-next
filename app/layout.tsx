@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/ui/Nav";
 import User from "@/components/ui/User";
 import Provider from "./Provider";
+import Theme from "@/components/Theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,14 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <Provider>
-          <Nav>
-            <User />
-          </Nav>
-          {children}
-        </Provider>
+        <Theme>
+          <Provider>
+            <Nav>
+              <User />
+            </Nav>
+            {children}
+          </Provider>
+        </Theme>
       </body>
     </html>
   );

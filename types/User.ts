@@ -14,4 +14,5 @@ export type UserType = {
   createdAt: Date;
   _id: string;
   about?: string;
+  picture?: number;
 };

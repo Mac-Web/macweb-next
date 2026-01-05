@@ -38,7 +38,8 @@ function NavUser({ user }: { user: Session["user"] }) {
         {user?.image ? (
           <Image src={user.image} alt="Avatar" width={35} height={35} className="rounded-full" />
         ) : (
-          <FaUser color="white" size={25} />
+          <FaUser className="text-black dark:text-white" size={25} />
+          //TODO: update nav user icon based on selected preset picture index and not default user
         )}
       </motion.div>
       {menuOpen && (

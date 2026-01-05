@@ -24,6 +24,9 @@ const UserSchema = new Schema(
     about: {
       type: String,
     },
+    picture: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );

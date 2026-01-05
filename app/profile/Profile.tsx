@@ -1,4 +1,4 @@
-import { FaUser } from "react-icons/fa";
+import ProfileIcon from "./ProfileIcon";
 import { MdEmail } from "react-icons/md";
 import { BiCalendar } from "react-icons/bi";
 import { UserType } from "@/types/User";
@@ -25,7 +25,7 @@ function Profile({ existingUser, viewer }: ProfileProps) {
           className={`rounded-full ${viewer ? "" : "cursor-pointer"}`}
         />
       ) : (
-        <FaUser size={150} className="rounded-full border-5 border-gray-300 dark:border-gray-700 cursor-pointer" color="white" />
+        <ProfileIcon existingUser={existingUser} viewer={viewer} />
       )}
       <div className="flex flex-col gap-y-1">
         <h2 className="text-black dark:text-white text-3xl font-bold">{existingUser.display}</h2>

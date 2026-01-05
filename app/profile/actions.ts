@@ -24,6 +24,18 @@ export async function updateAbout(id: string, about: string) {
   }
 }
 
+export async function updateProfilePicture(id: string, picture: number) {
+  try {
+    await dbConnect();
+    const newUser = await User.findByIdAndUpdate(id, { picture });
+    if (!newUser) {
+      return { error: "Error: user not found" };
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export async function deleteAccount(id: string, tokenID: string) {
   try {
     const session = await getServerSession(authOptions);

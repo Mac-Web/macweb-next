@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DeleteBtn from "./DeleteBtn";
 import ShareBtn from "./ShareBtn";
+import Display from "./Display";
 
 type ProfileProps = {
   existingUser: UserType;
@@ -28,8 +29,8 @@ function Profile({ existingUser, viewer }: ProfileProps) {
         <ProfileIcon existingUser={existingUser} viewer={viewer} />
       )}
       <div className="flex flex-col gap-y-1">
-        <h2 className="text-black dark:text-white text-3xl font-bold">{existingUser.display}</h2>
-        <div className="text-gray-800 dark:text-gray-100">{existingUser.username}</div>
+        <Display existingUser={existingUser} viewer={viewer} />
+        <div className="text-gray-700 dark:text-gray-200">@{existingUser.username}</div>
         {!viewer && (
           <div className="flex gap-x-5">
             <Link href={`/profile/${existingUser?._id}`} className="w-fit text-blue-600 hover:underline">

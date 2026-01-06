@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import SigninBtn from "../SigninBtn";
 import NavUser from "./NavUser";
+import NavIcon from "./NavIcon";
 
 async function User() {
   const session = await getServerSession();
@@ -8,7 +9,11 @@ async function User() {
   if (!session) {
     return <SigninBtn />;
   } else {
-    return <NavUser user={session.user} />;
+    return (
+      <NavUser user={session.user}>
+        <NavIcon />
+      </NavUser>
+    );
   }
 }
 

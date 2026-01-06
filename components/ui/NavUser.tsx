@@ -9,8 +9,14 @@ import { MdDarkMode, MdLogout, MdLightMode } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import NavIcon from "./NavIcon";
 
-function NavUser({ user }: { user: Session["user"] }) {
+type NavUserProps = {
+  children: React.ReactNode;
+  user: Session["user"];
+};
+
+function NavUser({ children, user }: NavUserProps) {
   const { theme, setTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -36,10 +42,16 @@ function NavUser({ user }: { user: Session["user"] }) {
         onClick={() => setMenuOpen(true)}
       >
         {user?.image ? (
-          <Image src={user.image} alt="Avatar" width={35} height={35} className="rounded-full" />
+          <Image
+            src={user.image}
+            alt="Avatar"
+            title="Avatar"
+            width={40}
+            height={40}
+            className="border-2 border-gray-500 dark:border-gray-700 rounded-full"
+          />
         ) : (
-          <FaUser className="text-black dark:text-white" size={25} />
-          //TODO: update nav user icon based on selected preset picture index and not default user
+          children
         )}
       </motion.div>
       {menuOpen && (

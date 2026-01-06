@@ -104,6 +104,7 @@ function SigninModal({ close }: { close: () => void }) {
             {error && (
               <div className="text-red-600 w-full">
                 {signUp ? "That username is in use" : "Login failed, check your credentials"}
+                {/*TODO: make error message smarter and more accurate*/}
               </div>
             )}
             <input

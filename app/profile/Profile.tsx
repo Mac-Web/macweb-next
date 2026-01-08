@@ -16,7 +16,7 @@ type ProfileProps = {
 
 function Profile({ existingUser, viewer }: ProfileProps) {
   return (
-    <div className="flex flex-col gap-y-7 rounded-lg bg-gray-300 dark:bg-gray-900 w-85 p-10 h-fit">
+    <div className="flex flex-0.5 flex-col gap-y-7 rounded-lg bg-gray-300 dark:bg-gray-900 sm:w-85 p-10 h-fit">
       {existingUser.image ? (
         <Image
           src={existingUser.image}

@@ -47,7 +47,7 @@ function ProfileModal({ existingUser, close, icons, setSelectedIcon }: ProfileMo
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0 }}
-        className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-5 items-center pt-3 p-10 w-100 relative"
+        className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-5 items-center pt-3 p-10 w-[90vw] sm:w-[80vw] md:w-100 relative max-h-[95vh] overflow-auto"
       >
         <h2 className="text-2xl font-bold text-black dark:text-white text-center">Edit Profile Picture</h2>
         <div className="flex flex-wrap justify-between gap-3 w-full">

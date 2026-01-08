@@ -95,7 +95,7 @@ function SigninModal({ close }: { close: () => void }) {
             handleSignIn(e);
           }
         }}
-        className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-100 relative"
+        className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-[90vw] sm:w-[80vw] md:w-100 relative max-h-[95vh] overflow-auto"
       >
         <Image src="/logo.png" alt="MacWeb Logo" width={45} height={45} className=" -top-10" />
         <div className="w-full flex flex-col items-center gap-y-5">

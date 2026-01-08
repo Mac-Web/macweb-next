@@ -21,7 +21,7 @@ async function Page() {
   const existingUser = JSON.parse(JSON.stringify(res));
 
   return (
-    <div className="flex py-5 px-30 gap-x-5">
+    <div className="flex flex-col sm:flex-row py-5 px-5 md:px-20 lg:px-[calc(50%-550px)] gap-5">
       {session?.user ? (
         <>
           <Profile existingUser={existingUser} />
@@ -48,7 +48,7 @@ async function Page() {
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-y-10 items-center justify-center w-full h-100">
+        <div className="flex flex-col gap-y-10 items-center justify-center w-full h-30 md:h-100">
           <h2 className="text-black dark:text-white text-xl font-bold">Sign in to access user profile</h2>
           <SigninBtn />
         </div>

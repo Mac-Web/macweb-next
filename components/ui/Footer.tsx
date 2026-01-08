@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="border-t border-gray-700 py-12 px-30 flex justify-between items-start gap-x-5 mt-12 text-sm">
+    <footer className="border-t border-gray-700 py-12 px-5 md:px-20 lg:px-[calc(50%-550px)]  flex flex-wrap md:flex-nowrap gap-y-15 justify-between items-start gap-x-15 mt-12 text-sm">
       <div className="footer-column">
         <a
           href=""
@@ -62,7 +62,7 @@ function Footer() {
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">Social</h2>
-        <div className="flex gap-x-5 items-center">
+        <div className="flex flex-wrap gap-5 items-center">
           <a href="mailto:mac.web.company@gmail.com" target="_blank" className="footer-icon" title="Email us">
             <Image src="/icons/email.svg" alt="Email icon" width={25} height={25} className="invert dark:invert-0" />
           </a>

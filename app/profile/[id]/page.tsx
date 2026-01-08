@@ -19,7 +19,7 @@ async function Page({ params }: { params: { id: string } }) {
   const existingUser = JSON.parse(JSON.stringify(res));
 
   return (
-    <div className="flex py-5 px-30 gap-x-5">
+    <div className="flex flex-col sm:flex-row py-5 px-5 md:px-20 lg:px-[calc(50%-550px)] gap-5">
       {existingUser ? (
         <>
           <Profile existingUser={existingUser} viewer={true} />

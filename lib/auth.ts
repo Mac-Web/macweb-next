@@ -49,6 +49,14 @@ export const authOptions: NextAuthOptions = {
   ],
   session: { strategy: "jwt" },
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith("/")) {
+        return baseUrl + url;
+      } else if (new URL(url).hostname.endsWith("macweb.com")) {
+        return url;
+      }
+      return baseUrl;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
@@ -82,6 +90,18 @@ export const authOptions: NextAuthOptions = {
         }
       }
       return true;
+    },
+  },
+  cookies: {
+    sessionToken: {
+      name: "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        domain: ".macweb.com", //TODO: change this to env var so it works on prod
+        secure: false,
+      },
     },
   },
 };

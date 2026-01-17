@@ -9,7 +9,6 @@ import { MdDarkMode, MdLogout, MdLightMode } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import NavIcon from "./NavIcon";
 
 type NavUserProps = {
   children: React.ReactNode;

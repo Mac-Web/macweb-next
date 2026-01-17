@@ -9,7 +9,12 @@ import Image from "next/image";
 
 const oAuthProviders = ["google", "discord", "facebook", "github"];
 
-function SigninModal({ close }: { close: () => void }) {
+type SigninModalProps = {
+  close: () => void;
+  redirect?: string | null;
+};
+
+function SigninModal({ close, redirect }: SigninModalProps) {
   const [credentials, setCredentials] = useState<CredentialsType>({ username: "", display: "", password: "" });
   const [loading, setLoading] = useState<string | boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -43,13 +48,15 @@ function SigninModal({ close }: { close: () => void }) {
     } else {
       const signInRes = await signIn("credentials", {
         redirect: false,
+        callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
+        //TODO: make this actually work for prod
         username: credentials.username,
         password: credentials.password,
       });
       if (signInRes?.error) {
         setError(true);
       } else {
-        window.location.reload();
+        window.location.href = signInRes?.url || "";
       }
     }
   }
@@ -60,6 +67,7 @@ function SigninModal({ close }: { close: () => void }) {
     setLoading(true);
     const res = await signIn("credentials", {
       redirect: false,
+      callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
       username: credentials.username,
       password: credentials.password,
     });
@@ -67,12 +75,15 @@ function SigninModal({ close }: { close: () => void }) {
     if (res?.error) {
       setError(true);
     } else {
-      window.location.reload();
+      window.location.href = res?.url || "";
     }
   }
+  //TODO: merge handlesignin and handlesignup into one function cuz most of the logic is same
 
   function handleOAuthSignin(provider: string) {
-    signIn(provider);
+    signIn(provider, {
+      callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
+    });
     setLoading(provider);
   }
 

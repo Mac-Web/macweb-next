@@ -2,10 +2,21 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import SigninModal from "./SigninModal";
 
 function SigninBtn() {
   const [signinModalOpen, setSigninModalOpen] = useState<boolean>(false);
+  const [redirectURL, setRedirectURL] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
+
+  useEffect(() => {
+    if (redirect) {
+      setSigninModalOpen(true);
+      setRedirectURL(redirect);
+    }
+  }, []);
 
   useEffect(() => {
     if (signinModalOpen) {
@@ -23,7 +34,9 @@ function SigninBtn() {
       >
         Sign in
       </button>
-      <AnimatePresence>{signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} />}</AnimatePresence>
+      <AnimatePresence>
+        {signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} redirect={redirectURL} />}
+      </AnimatePresence>
     </>
   );
 }

@@ -8,6 +8,8 @@ import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import bcrypt from "bcryptjs";
 
+const isProd = process.env.NODE_ENV === "production";
+
 export const authOptions: NextAuthOptions = {
   providers: [
     Google({
@@ -97,10 +99,10 @@ export const authOptions: NextAuthOptions = {
       name: "next-auth.session-token",
       options: {
         httpOnly: true,
-        sameSite: "none",
+        sameSite: isProd ? "none" : "lax",
         path: "/",
         domain: `.${process.env.NEXT_PUBLIC_ROOT_HOST}`,
-        secure: true,
+        secure: isProd,
       },
     },
   },

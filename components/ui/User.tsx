@@ -5,6 +5,7 @@ import NavIcon from "./NavIcon";
 
 async function User() {
   const session = await getServerSession();
+  console.log(session);
 
   if (!session) {
     return <SigninBtn />;

@@ -48,7 +48,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
     } else {
       const signInRes = await signIn("credentials", {
         redirect: false,
-        callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
+        callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
         //TODO: make this actually work for prod
         username: credentials.username,
         password: credentials.password,
@@ -67,7 +67,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
     setLoading(true);
     const res = await signIn("credentials", {
       redirect: false,
-      callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
+      callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
       username: credentials.username,
       password: credentials.password,
     });
@@ -82,7 +82,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
 
   function handleOAuthSignin(provider: string) {
     signIn(provider, {
-      callbackUrl: redirect ? `http://${redirect}.macweb.com:3001` : process.env.NEXT_PUBLIC_ROOT_URL,
+      callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
     });
     setLoading(provider);
   }

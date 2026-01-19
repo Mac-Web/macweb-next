@@ -52,7 +52,7 @@ export const authOptions: NextAuthOptions = {
     async redirect({ url, baseUrl }) {
       if (url.startsWith("/")) {
         return baseUrl + url;
-      } else if (new URL(url).hostname.endsWith("macweb.com")) {
+      } else if (new URL(url).hostname.endsWith(process.env.NEXT_PUBLIC_ROOT_HOST!)) {
         return url;
       }
       return baseUrl;
@@ -99,7 +99,7 @@ export const authOptions: NextAuthOptions = {
         httpOnly: true,
         sameSite: "lax",
         path: "/",
-        domain: ".macweb.com", //TODO: change this to env var so it works on prod
+        domain: `.${process.env.NEXT_PUBLIC_ROOT_HOST}`,
         secure: false,
       },
     },

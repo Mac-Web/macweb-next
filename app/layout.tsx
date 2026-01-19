@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Home | MacWeb",
   description: "MacWeb, your best internet bud for productivity, entertainment, and more!",
-  authors: [{ name: "MacWeb", url: "https://macweb-next.vercel.app" }],
+  authors: [{ name: "MacWeb", url: "https://macweb.app" }],
   openGraph: {
     title: "MacWeb",
     description: "MacWeb, your best internet bud for productivity, entertainment, and more!",
-    url: "https://macweb-next.vercel.app",
+    url: "https://macweb.app",
     siteName: "MacWeb",
     images: [
       {

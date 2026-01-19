@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import SigninModal from "./SigninModal";
 
-function SigninBtn() {
+function SigninBtnContent() {
   const [signinModalOpen, setSigninModalOpen] = useState<boolean>(false);
   const [redirectURL, setRedirectURL] = useState<string | null>(null);
   const searchParams = useSearchParams();
@@ -16,7 +16,7 @@ function SigninBtn() {
       setSigninModalOpen(true);
       setRedirectURL(redirect);
     }
-  }, []);
+  }, [redirect]);
 
   useEffect(() => {
     if (signinModalOpen) {
@@ -38,6 +38,14 @@ function SigninBtn() {
         {signinModalOpen && <SigninModal close={() => setSigninModalOpen(false)} redirect={redirectURL} />}
       </AnimatePresence>
     </>
+  );
+}
+
+function SigninBtn() {
+  return (
+    <Suspense>
+      <SigninBtnContent />
+    </Suspense>
   );
 }
 

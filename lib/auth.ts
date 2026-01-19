@@ -97,10 +97,10 @@ export const authOptions: NextAuthOptions = {
       name: "next-auth.session-token",
       options: {
         httpOnly: true,
-        sameSite: "lax",
+        sameSite: "none",
         path: "/",
         domain: `.${process.env.NEXT_PUBLIC_ROOT_HOST}`,
-        secure: false,
+        secure: true,
       },
     },
   },

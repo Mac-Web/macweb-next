@@ -105,5 +105,14 @@ export const authOptions: NextAuthOptions = {
         secure: isProd,
       },
     },
+    csrfToken: {
+      name: `next-auth.csrf-token`,
+      options: {
+        httpOnly: true,
+        sameSite: isProd ? "none" : "lax",
+        path: "/",
+        secure: isProd,
+      },
+    },
   },
 };

@@ -114,5 +114,23 @@ export const authOptions: NextAuthOptions = {
         secure: isProd,
       },
     },
+    callbackUrl: {
+      name: `next-auth.callback-url`,
+      options: {
+        httpOnly: true,
+        sameSite: isProd ? "none" : "lax",
+        path: "/",
+        secure: isProd,
+      },
+    },
+    pkceCodeVerifier: {
+      name: `next-auth.pkce.code_verifier`,
+      options: {
+        httpOnly: true,
+        sameSite: isProd ? "none" : "lax",
+        path: "/",
+        secure: isProd,
+      },
+    },
   },
 };

@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import Image from "next/image";
@@ -6,7 +7,7 @@ import Image from "next/image";
 const icons: string[] = ["user", "cat", "crine", "dog", "knight", "poop", "robot", "skull", "github"];
 
 async function NavIcon() {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   await dbConnect();
   const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
   const existingUser = JSON.parse(JSON.stringify(res));

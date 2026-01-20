@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import { FaTrophy } from "react-icons/fa6";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 async function Page() {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   await dbConnect();
   const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
   const existingUser = JSON.parse(JSON.stringify(res));

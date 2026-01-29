@@ -12,7 +12,7 @@ function Footer() {
         </a>
         <div className="text-gray-800 dark:text-gray-100">
           &copy; {new Date().getFullYear()}{" "}
-          <a href="https://mac-web.github.io" target="_blank" className="underline">
+          <a href="https://macweb.app" target="_blank" className="underline">
             MacWeb
           </a>
         </div>
@@ -44,13 +44,13 @@ function Footer() {
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">MacWeb Apps</h2>
-        <a href="https://mac-web.github.io/macvg/" className="footer-link" target="_blank">
+        <a href="https://macvg.macweb.app" className="footer-link" target="_blank">
           MacVG
         </a>
-        <a href="https://mac-web.github.io/maclearn/" className="footer-link" target="_blank">
+        <a href="https://maclearn.macweb.app" className="footer-link" target="_blank">
           MacLearn
         </a>
-        <a href="https://mac-web.github.io/macideas/" className="footer-link" target="_blank">
+        {/* <a href="https://mac-web.github.io/macideas/" className="footer-link" target="_blank">
           MacIdeas
         </a>
         <a href="https://mac-web.github.io/mactools/" className="footer-link" target="_blank">
@@ -58,7 +58,7 @@ function Footer() {
         </a>
         <a href="https://mac-web.github.io/macblog/" className="footer-link" target="_blank">
           MacBlog
-        </a>
+        </a> */}
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">Social</h2>
@@ -69,7 +69,7 @@ function Footer() {
           <a href="https://www.youtube.com/@Mac-Web" target="_blank" className="footer-icon" title="YouTube">
             <Image src="/icons/youtube.svg" alt="YouTube icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
-          <a href="https://github.com/Mac-Web/mac-web.github.io" target="_blank" className="footer-icon" title="Source code">
+          <a href="https://github.com/Mac-Web/macweb-next" target="_blank" className="footer-icon" title="Source code">
             <Image src="/icons/github.svg" alt="GitHub icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
           <a href="https://discord.gg/UT7g2S2cBP" target="_blank" className="footer-icon" title="Join our server!">

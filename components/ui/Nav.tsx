@@ -16,13 +16,13 @@ function Nav({ children }: { children: React.ReactNode }) {
       </Link>
       <div className="flex gap-x-3 items-center">
         <div className="md:flex items-center gap-x-3 hidden">
-          <a href="https://mac-web.github.io/macvg/" className="nav-link">
+          <a href="https://macvg.macweb.app" className="nav-link">
             MacVG
           </a>
-          <a href="https://mac-web.github.io/maclearn/" className="nav-link">
+          <a href="https://maclearn.macweb.app" className="nav-link">
             MacLearn
           </a>
-          <a href="https://mac-web.github.io/macideas/" className="nav-link">
+          {/* <a href="https://mac-web.github.io/macideas/" className="nav-link">
             MacIdeas
           </a>
           <a href="https://mac-web.github.io/mactools/" className="nav-link">
@@ -30,7 +30,7 @@ function Nav({ children }: { children: React.ReactNode }) {
           </a>
           <a href="https://mac-web.github.io/macblog/" className="nav-link">
             MacBlog
-          </a>
+          </a> */}
         </div>
         {children}
       </div>

@@ -13,7 +13,7 @@ function Card({ name, src }: CardProps) {
     <motion.a
       whileHover={{ scale: 1.05, y: -10 }}
       transition={{ duration: 0.7, type: "spring" }}
-      href={`https://mac-web.github.io/${name.toLowerCase()}/`}
+      href={`https://${name.toLowerCase()}.macweb.app`}
       className="bg-gray-300 dark:bg-gray-900 rounded flex flex-col items-center gap-y-5 py-5 px-7 group"
     >
       <Image

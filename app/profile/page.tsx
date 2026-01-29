@@ -28,7 +28,7 @@ async function Page() {
           <Profile existingUser={existingUser} />
           <div className="flex-1 flex flex-col gap-y-5">
             <About existingUser={existingUser} />
-            <div className="profile-section">
+            {/* <div className="profile-section">
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
               </h2>
@@ -45,7 +45,7 @@ async function Page() {
                 <MdArticle size={25} /> Favorited Articles
               </h2>
               <p className="text-gray-800 dark:text-gray-100">Favorited articles coming soon!</p>
-            </div>
+            </div> */}
           </div>
         </>
       ) : (

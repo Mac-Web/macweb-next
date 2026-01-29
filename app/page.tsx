@@ -19,9 +19,9 @@ export default function Page() {
         <div className="flex justify-center gap-7 flex-wrap px-5 lg:px-25">
           <Card name="MacVG" src="/logos/macvg.png" />
           <Card name="MacLearn" src="/logos/maclearn.png" />
-          <Card name="MacIdeas" src="/logos/macideas.png" />
+          {/* <Card name="MacIdeas" src="/logos/macideas.png" />
           <Card name="MacTools" src="/logos/mactools.png" />
-          <Card name="MacBlog" src="/logos/macblog.png" />
+          <Card name="MacBlog" src="/logos/macblog.png" /> */}
         </div>
       </div>
       <Section
@@ -46,7 +46,7 @@ export default function Page() {
         color="#2949AE"
         img="/logos/maclearn.png"
       />
-      <Section
+      {/* <Section
         title="MacIdeas, the ultimate productivity tool"
         description="MacIdeas is the ultimate productivity tool for capturing and writing down your ideas, thoughts, and anything! With the integration of tasks, notes, drawings, and more, you can manage your imagination and thoughts easily! Unfortunately, MacIdea's development is currently paused, but we'll resume development and keep improving it in the future!"
         app="macideas"
@@ -68,7 +68,7 @@ export default function Page() {
         color="#491E87"
         img="/logos/macblog.png"
         odd={true}
-      />
+      /> */}
       <Footer />
     </motion.div>
   );

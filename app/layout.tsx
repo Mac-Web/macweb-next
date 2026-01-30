@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Nav from "@/components/ui/Nav";
 import User from "@/components/ui/User";
@@ -47,6 +48,7 @@ export default function RootLayout({
           </Provider>
         </Theme>
       </body>
+      <GoogleAnalytics gaId="G-V741BQJ729" />
     </html>
   );
 }

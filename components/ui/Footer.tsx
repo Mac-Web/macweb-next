@@ -23,6 +23,11 @@ function Footer() {
             Tony Macaroni
           </a>
         </div>
+        <div className="text-gray-800 dark:text-gray-100">
+          <a href="https://buymeacoffee.com/tonymac129" target="_blank" className="underline">
+            Buy me a coffee ☕
+          </a>
+        </div>
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">Browse Tabs</h2>
@@ -63,10 +68,10 @@ function Footer() {
       <div className="footer-column">
         <h2 className="footer-column-title">Social</h2>
         <div className="flex flex-wrap gap-5 items-center">
-          <a href="mailto:mac.web.company@gmail.com" target="_blank" className="footer-icon" title="Email us">
+          <a href="mailto:hello@macweb.app" target="_blank" className="footer-icon" title="Email us">
             <Image src="/icons/email.svg" alt="Email icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
-          <a href="https://www.youtube.com/@Mac-Web" target="_blank" className="footer-icon" title="YouTube">
+          <a href="https://www.youtube.com/@MacWebApp" target="_blank" className="footer-icon" title="YouTube">
             <Image src="/icons/youtube.svg" alt="YouTube icon" width={25} height={25} className="invert dark:invert-0" />
           </a>
           <a href="https://github.com/Mac-Web/macweb-next" target="_blank" className="footer-icon" title="Source code">

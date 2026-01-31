@@ -85,7 +85,7 @@ async function Page({ params }: { params: { app: string; slug: string[] } }) {
         {sortedPosts.map((post) => (
           <PostCard
             key={post.id}
-            href={""}
+            href={`/apps/${app}/${slug[0]}/${post.slug}`}
             title={post.sidetitle || post.title}
             img={`/logos/${app}.png`}
             description={post.description || post.date}

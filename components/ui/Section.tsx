@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const phrases = [
   "Take me there",
@@ -65,16 +66,16 @@ function Section({ title, description, app, color, img, odd }: SectionProps) {
               {phrases[selectedPhrase]}
             </motion.a>
           )}
-          <motion.a
+          <motion.div
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ duration: 0.7, type: "spring" }}
-            href={`https://mac-web.github.io/macblog/#/apps/${app}/`}
-            className="section-btn"
-            target="_blank"
+            className="section-btn px-0!"
             style={{ borderColor: color }}
           >
-            More info
-          </motion.a>
+            <Link href={`/apps/${app}/`} className="px-5">
+              More info
+            </Link>
+          </motion.div>
         </div>
       </div>
       {odd && (

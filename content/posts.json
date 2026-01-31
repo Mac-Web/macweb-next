@@ -1,0 +1,160 @@
+{
+    "posts": [
+        {
+            "id": 49,
+            "category": "Post",
+            "app": "MacTools",
+            "title": "Improving MacTools Countdown Accuracy with a Day-Based System",
+            "sidetitle": "Countdown Accuracy",
+            "slug": "countdown-accuracy",
+            "date": "2024-02-22",
+            "author": "Tony",
+            "content": {
+                "description": "Fixing MacTools time countdown accuracy.",
+                "paragraphs": [
+                    {
+                        "title": "What we did",
+                        "content": "The old Mactime countdown had issues with accuracy when setting dates far into the future, sometimes being off by hours or even days. To fix this, we switched to a day-based countdown system instead of using months and days. Months can have different numbers of days, which made the old system inaccurate. Now, we count the total number of days and use an average of 30 days per month to convert it into months. This makes it easier to understand without causing errors. It's a simple but clever solution."
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "Fix",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 50,
+            "category": "Post",
+            "app": "MacVG",
+            "title": "Streamlining Downloads for a Better Experience on MacVG",
+            "sidetitle": "Improving Downloads",
+            "slug": "improving-downloads",
+            "date": "2024-03-05",
+            "author": "Tony",
+            "content": {
+                "description": "We completely recoded the MacVG download button to improve the user experience significantly while helping us work less.",
+                "paragraphs": [
+                    {
+                        "title": "We're shutting down the old download button in MacVG for several good reasons:",
+                        "content": "We're shutting down the old download button in MacVG for several good reasons: 1. More than 80% of the games won't work when downloaded and run on file protocol because they're based on the Unity game engine. 2. There are too many requests for us to process, and most of the games requested won't work because of the previous reason anyway. 3.There are legal and ethical issues with licensing, distribution, and copyright on many games. Using a Google form for download requests is slow, inefficient, and unprofessional. So, we've decided to remove the download button for all games that don't work and only keep it for games with a free distribution license that work on file protocol. This way, we tackle three big problems at once. We've also done away with the Google form and Google Drive setup. Instead, we’ve zipped the folders (a smart and simple solution). Now, when users click the download button, the zipped folder will automatically download. They can then unzip it and enjoy the games offline, making sure they're playing copyright-free games without us having to process so many download requests."
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "Improvement",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 51,
+            "category": "Post",
+            "app": "MacVG",
+            "title": "Resolving the MacVG Update Issue with a maintenance break",
+            "sidetitle": "MacVG Maintenance",
+            "slug": "macvg-maintenance",
+            "date": "2024-04-01",
+            "author": "Tony",
+            "content": {
+                "description": "We had a maintenance break earlier for a good reason below:",
+                "paragraphs": [
+                    {
+                        "title": "Why Maintenance?",
+                        "content": "Today was a really bad day because GitHub Desktop couldn't handle updating the huge game site, making MacVG unavailable. The April update for MacVG was pretty big, so I copied the entire folder to the remote repository. But GitHub Desktop took forever to update and push it, causing the remote to disconnect multiple times. I had deleted all the files beforehand, so the game site was completely empty. I tried a lot of solutions, and nothing worked until I realized that GitHub Desktop only pushes the changed files each time. So, I divided the MacVG folder into smaller sections and uploaded each section one by one. It took a long time, but I gradually uploaded 30 games at a time, then 40, then 50, repeating until all the games and other files were uploaded to the remote repository. That's how we fixed this huge MacVG issue in just 2 hours. Let's go!"
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "Fix",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 52,
+            "category": "Post",
+            "app": "MacVG",
+            "title": "More Than 30 Bugged MacVG Games Now Playable",
+            "sidetitle": "Fixed Bugged Games",
+            "slug": "fixed-games",
+            "date": "2024-06-06",
+            "author": "Tony",
+            "content": {
+                "description": "We fixed a bunch of bugged games that hadn't been working for a long time.",
+                "paragraphs": [
+                    {
+                        "title": "How We Fixed Them",
+                        "content": "So, there’s been a problem on MacVG since the huge January update on 1/1/2024, where you couldn’t type in certain games, making them almost unplayable. The experience was terrible. While working on the July update, we went through the JavaScript files to optimize and improve performance. We checked each code and found an event listener that was preventing the keydown event’s default actions, meaning you couldn’t type in games. We have no idea why that piece of code was there, but after removing it, the bug was finally fixed! Now you can type in so many games. Thanks to your feedback, we identified and resolved this issue! This fix didn’t have any negative impact, so you can now enjoy tons of games like the Vex series, Google Feud, Mario, Minecraft, and more, which you couldn't play before due to the annoying bug!"
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "Fix",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 53,
+            "category": "Post",
+            "app": "MacWeb",
+            "title": "Finally Being Able to Commit on GitHub Faster",
+            "sidetitle": "Commit on GitHub",
+            "slug": "commit-github",
+            "date": "2023-10-27",
+            "author": "Tony",
+            "content": {
+                "description": "I discovered a tool that could boost GitHub commits significantly faster.",
+                "paragraphs": [
+                    {
+                        "title": "The Tool",
+                        "content": "I wanted to reupload the entire MacVG game site to GitHub, but the online site wouldn't allow me to upload files larger than 25mb. Then, I found out about the tool GitHub Desktop, which seemed to be able to handle large amount of changes and commits. I logged onto ChatGPT and asked for help on how to use GitHub Desktop since I wanted to use it for uploading stuff. After watching a bunch of YouTube tutorials that didn't really help, I finally found one that did and managed to upload \"10 Minutes Till Dawn\" to GitHub via GitHub Desktop. Then, I did some more research, changed my global identity settings, and downloaded Git. Finally, I went into the settings (Files -> Options) and disabled SSH, and it worked successfully!"
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "The Tool",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 54,
+            "category": "Post",
+            "app": "MacVG",
+            "title": "How We Solved the MacVG 2.0 Progress Lost Issue",
+            "sidetitle": "Restored Progress Loss",
+            "slug": "progress-loss",
+            "date": "2023-12-20",
+            "author": "Tony",
+            "content": {
+                "description": "We found a way to fix the issue with the games' progress not being saved.",
+                "paragraphs": [
+                    {
+                        "title": "The Fix",
+                        "content": "We recently decided to embed all games using iframes so users can have more games on the screen, more control, and extra features. With the new 2.0 update, we introduced a brand-new UI for each game page and updated URLs and links for each game. At first, we placed the game HTML files with the new UI outside the original parent folder for the games. This caused local storage access issues due to browser cross-origin problems, resulting in game progress resets. So, we moved the refreshed HTML files inside the games' folders to avoid cross-origin issues and make sure your progress is saved. Thanks to this change, your game progress is safe and sound. Enjoy your uninterrupted gaming experience!"
+                    }
+                ],
+                "others": [
+                    "None"
+                ],
+                "menulinks": [
+                    "The Fix",
+                    "Others"
+                ]
+            }
+        }
+    ]
+}

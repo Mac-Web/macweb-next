@@ -20,6 +20,7 @@ export type PostType = {
   date: string;
   author: string;
   content: ContentType;
+  app: string;
 };
 
 export type GroupedType = Record<string, PostType[]>;

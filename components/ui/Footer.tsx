@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -31,16 +32,28 @@ function Footer() {
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">Browse Tabs</h2>
-        <a href="" className="footer-link">
+        <Link href="/" className="footer-link">
           Home
-        </a>
+        </Link>
+        <Link href="/apps" className="footer-link">
+          Apps
+        </Link>
+        <Link href="/updates" className="footer-link">
+          Updates
+        </Link>
+        <Link href="/posts" className="footer-link">
+          Posts
+        </Link>
+        <Link href="/roadmap" className="footer-link">
+          Roadmap
+        </Link>
       </div>
       <div className="footer-column">
         <h2 className="footer-column-title">MacWeb Information</h2>
-        <a href="https://mac-web.github.io/macblog/#/apps/macweb" className="footer-link" target="_blank">
+        <Link href="/apps/macweb" className="footer-link" target="_blank">
           About
-        </a>
-        <a href="https://mac-web.github.io/macblog/#/apps/macweb/updates" className="footer-link" target="_blank">
+        </Link>
+        <a href="/apps/macweb/updates" className="footer-link" target="_blank">
           Updates
         </a>
         <a href="https://forms.gle/iacBWZAYAizBsfyt9" className="footer-link" target="_blank">

@@ -1,0 +1,542 @@
+{
+    "id": 2,
+    "slug": "maclearn",
+    "name": "MacLearn",
+    "link": "https://maclearn.macweb.app",
+    "releaseDate": "2/15/2023",
+    "logo": "maclearn.png",
+    "description": "Learn, strengthen, and master. Read coding tutorials on MacLearn, learn programming tips, try them in Code Playground, and create anything. In the 21st century, coding is one of the most important skills to learn and master. Learn to code now, at MacLearn.",
+    "posts": [
+        {
+            "id": 0,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.5 Anniversary Update",
+            "sidetitle": "Anniversary Update",
+            "slug": "anniversay-update",
+            "date": "2024-02-11",
+            "author": "Tony",
+            "content": {
+                "description": "Not only is this massive MacLearn update the first prerelease update, it's also MacLearn's birthday. Exactly 365 days ago, on the 11th of February, 2023, MacWeb's first app, MacLearn, was born. Over this year, many, many things happened. But MacLearn's still here. It went from Coding Place to MacCode, and finally to MacLearn, this app went through a lot of changes. In this busy year, MacLearn went from 2 tutorial articles to 26, with tons of other new pages, courses, features, and more planned to be released. To honor this incredible year for MacWeb, here's a massive anniversary update to MacLearn.",
+                "paragraphs": [
+                    {
+                        "title": "APP REBRANDING",
+                        "content": "We're expanding MacLearn to become the best and the most resourceful online learning education platform, so we renamed it from MacCode (which only focused on coding) to MacLearn, where you can access tons of valuable resources and support for a wide variety of subjects and knowledge. We're also rolling out massive user interface changes, user experience updates, and a new logo for this anniversary rebranding 📖! "
+                    },
+                    {
+                        "title": "NEW COURSES",
+                        "content": "We basically recreated the whole app in this massive update, because we're giving out massive changes to existing courses (HTML and Refrences) and releasing tons of new courses, articles, and resources for almost any subject in the future! In the next couple updates, we're gonna be publishing the CSS and JavaScript courses, so stay tuned 🆕!"
+                    },
+                    {
+                        "title": "NEW ARTICLES",
+                        "content": "From the old Coding Place to the new MacLearn, there's a lot of information that needed to be updated and rewritten, plus even more updates for functionality and appearance changes. We rewrote every article and also published some new ones, so you can learn and master a course more easily! On top of that, we're also introducing new quizzes and exercises for you practice in this update ✏️! "
+                    },
+                    {
+                        "title": "NEW NAVIGATION BAR",
+                        "content": "In order to give you the easiest, quickest, and most effective way to learn different subjects, we're rolling out a brand new powerful navigation bar on top of each pages! It has many dropdown menus for course catagories and a help menu, and when you hover over them, a list of subjects and courses will appear, and you can navigate to any course you want easily just by clicking on it! This makes all the courses organized while being easily accessible at the same time! We also added new styles, effects, and links to align MacLearn to MacWeb Site Material 2 so it feels the same as other MacWeb apps 🔥! "
+                    },
+                    {
+                        "title": "NEW APPEARANCE",
+                        "content": "To make MacLearn more user friendly, modern, and unified with other MacWeb apps and match with MacWeb Site Material 2, we revamped the whole layout, content, and styling for every single page to enhance your experience on MacLearn! With carefully designed pages, you'll have a better and more comfortable learning experience 🎨! "
+                    },
+                    {
+                        "title": "NEW PAGE: Playground!",
+                        "content": "What's the point of learning to code if you can't try it out on your own? That's why we're releasing our brand new in-app online code editor Playground in this update, so you can try out your coding skills, practice, and be a master of programming! Currently, you can code in HTML, CSS, and JavaScript in Playground, and more languages will be supported in Playground soon 🧑‍💻!"
+                    },
+                    {
+                        "title": "NEW UPDATE SCHEDULE",
+                        "content": "Just like all the other MacWeb apps, MacLearn will also receive regular updates monthly, with new contents, resources, articles, pages, features, and more releasing on the first day of each month! Because of regular updates, soon, MacLearn will have tons of new courses, resources, and features 📆!"
+                    },
+                    {
+                        "title": "FUTURE PLANS",
+                        "content": "From this anniversary update to the version 1.0 release, we'll continue rolling out awesome features, tutorials, and more. The primary focus we'll be working on is the learning path. We'll add more exercises and quizzes for learners to test their skills, and by doing that, they'll remember more and master courses more easily. We'll also make the learning process fun by adding game elements and more to help with your learning journey. Onward ✈️!"
+                    }
+                ],
+                "others": [
+                    "Changed HTML and Refrences to Beta Courses.",
+                    "Brand new appearance and functionalities on each tab and page.",
+                    "Brand new pages.",
+                    "Brand new sidebars.",
+                    "Brand new visual effects.",
+                    "Brand new user interface and user experience.",
+                    "Bug fixes and navigational problem fixes.",
+                    "Fixed footer problems and new footer content.",
+                    "New feedback form and support page.",
+                    "New update page.",
+                    "New home page course page and content.",
+                    "New update banner on top of the home page.",
+                    "Removed many pages because of site renovation."
+                ],
+                "menulinks": [
+                    "App Rebranding",
+                    "New Courses",
+                    "New Articles",
+                    "New Nav Bar",
+                    "New Appearance",
+                    "New Page",
+                    "New Update Schedule",
+                    "Future Plans",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.12 March Update",
+            "sidetitle": "March Update",
+            "slug": "march-update",
+            "date": "2024-03-01",
+            "author": "Tony",
+            "content": {
+                "description": "Only 17 days after the huge anniversary update, MacLearn is receiving yet another update, only huger and better. This is probably the BIGGEST update that's ever been dropped for any MacWeb app! From Code Labs to new looks, from new articles to tons of new features, March update is bringing so many exciting stuff for MacLearn that's gonna help your learning experience by A TON. We've basically remade the whole platform from the ground up. This update changes MacLearn so much that this article will be too long for anyone to read. So dive in if you want, or just skim through the headers. Let's go! ",
+                "paragraphs": [
+                    {
+                        "title": "NEW LOOKS!",
+                        "content": "We completely refreshed the layouts, styling, colors, and looks on every single one of our pages. We updated the homepage and several other tabs to create a more welcoming and modern experience on MacLearn. We also gave each article and tutorial a complete fresh new look with a darker background, lighter and bigger text, improved sidebar navigateability, and the placement of buttons and text fields. Other than these, we also updated the appearance by a ton across the entire site, to help you focus on learning, with an appealing and refreshing look, and not getting distracted by other stuff on the page 🖌️!"
+                    },
+                    {
+                        "title": "INTRODUCING: QUIZ 2.0!",
+                        "content": "The old quizzes we had for MacLearn was terrible. The functionality, the implementation, the interface, and the questions were all outdated and barely usable. That's why we completely remade Quiz from scratch, introducing: Quiz 2.0! With this new quiz system, you can choose when to start a new quiz, go forward and backward between questions, look at the options more clearly, select your answer easily, being able to see your score, and either review or move on along the course after finishing the quiz. We added so many more features and convenience that make it easier to practice and use your skills 📝!"
+                    },
+                    {
+                        "title": "NEW FEATURE: CODE LAB!",
+                        "content": "I'm speaking from experiences here: learning to code without trying it out yourself does not make you learn anything. Sure, you can memorize what syntax does what, but without trying it out and playing around it, you don't really understand how it works. That's why we're adding a brand new feature: Code Lab, to MacLearn! It's basically a mini code editor playground built in on the page, along with the tutorial, so you can immediately try out the new skills you learned from that article! You can enter anything from the left editor and see the output in realtime on the right! This makes it so much easier to let you really understand and try out the new skills you learned 🧑‍💻!"
+                    },
+                    {
+                        "title": "NEW FEATURE: CODE SNIPPET!",
+                        "content": "Other than the extremely powerful and useful Code Lab, we also added a new feature: Code Snippet, to MacLearn! Code Snippets provide an example of a piece of code that demonstrates how a new skill is used in that coding language. With this new feature, it's easier than ever to see the real code and try it out yourself 📎!"
+                    },
+                    {
+                        "title": "NEW FEATURE: TOP BAR",
+                        "content": "Our articles and tutorials often cover a lot of stuff and the page often gets very long. With the new Top Bar always sticking on the top of a page, it has info about the page like page title, last updated date, and several buttons that we'll talk about below. With the new top bar, it's easier to see the page's related info and functionality 📊."
+                    },
+                    {
+                        "title": "NEW FEATURE: SAVE!",
+                        "content": "This is definitely one of the most important new features we've ever released on MacLearn. You can now save your favorite tutorials pages to view them again in the future or as a bookmark! This makes it much more easier to review important skills or tricky topics. It also lets you continue your learning journey on the course! You can view all your saved pages in the Me tab ⭐!"
+                    },
+                    {
+                        "title": "NEW FEATURE: SHARE!",
+                        "content": "Another crazy feature we're dropping in this update is the new Share Page feature! Now, with a single click of a button, you can share a MacLearn article on many different social media platforms, or copy the link of the page! With this feature, you can spread the knowledge and resources on MacLearn to everyone for them to learn 📨!"
+                    },
+                    {
+                        "title": "NEW FEATURE: REPORT!",
+                        "content": "Encountered a bug on the page or just on MacLearn in general? Or do you just want to submit a feedback? The third feature we're releasing in this update: Report, does just that! Click on it, fill out a form, submit, and you're done ⚠️!"
+                    },
+                    {
+                        "title": "REWRITTEN PAGES!",
+                        "content": "Ever since the old Coding Place from well over a year ago, too much has happened. We've improved our app quality by a ton, and things have changed, too. So we basically rewrote and improved every single page in MacLearn to keep the info and resoruces up to date and quality 👍!"
+                    },
+                    {
+                        "title": "NEW COURSE HOMEPAGE!",
+                        "content": "We're not even close to done with so many major imporvements and updates so far! We completely revamped each of our couse's homepage to keep it comprehensive, visually appealing, and useful to everyone 🏠."
+                    },
+                    {
+                        "title": "NEW COURSE NAVIGATION!",
+                        "content": "Because of our improvements on MacLearn's quality, we've decided to add some new pages to our existing courses and changed the order or the articles a bit to focus on various topics and better match a learner's flow and provide them a better learning journey through the courses ✈️!"
+                    },
+                    {
+                        "title": "NEW TAB: ME!",
+                        "content": "To see all your saved pages, your learner's profile, and your progress on the courses, simply go to the new Me tab from the navigation bar to access all your profile's information 🏫!"
+                    }
+                ],
+                "others": [
+                    "Fixed article dates to American format.",
+                    "Fixed outdated contents and improved optimization on each page.",
+                    "Fixed appearance bugs and problems.",
+                    "Fixed Refrences and other pages navigational problems and bugs.",
+                    "Fixed footer date and related information.",
+                    "Removed About page and moved it to MacBlog, MacWeb's info hub.",
+                    "Removed initial release date of the article, only the updated date is displayed."
+                ],
+                "menulinks": [
+                    "New Looks",
+                    "Quiz 2.0",
+                    "Code Lab",
+                    "Code Snippet",
+                    "Top Bar",
+                    "New Feature: Save",
+                    "New Feature: Share",
+                    "New Feature: Report",
+                    "Rewritten Pages",
+                    "New Homepage",
+                    "New Navigation",
+                    "New Tab: Me",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.12.5 April Update",
+            "sidetitle": "April Update",
+            "slug": "april-update",
+            "date": "2024-04-01",
+            "author": "Tony",
+            "content": {
+                "description": "We barely touched MacLearn this month, because we already updated it a month ago, and it was MASSIVE. This month, we focused on revamping MacBlog and improving MacVG, so we didn't do that much changes to MacLearn, so let's see what's different here:",
+                "paragraphs": [
+                    {
+                        "title": "NEW LOOKS!",
+                        "content": "We updated the sidebar on the left of each article so each section of each unit is seperated properly by their articles with new quizzes, sections, and units that help you learn and practice coding more 🎓!"
+                    }
+                ],
+                "others": [
+                    "Fixed Quiz 2.0 not saving and a new finish page.",
+                    "Fixed Quiz 2.0 previous and next buttons not working properly.",
+                    "Fixed Quiz 2.0 bugs and issues.",
+                    "Minor appearance and functionality changes."
+                ],
+                "menulinks": [
+                    "New Looks",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.14 July Update",
+            "sidetitle": "July Update",
+            "slug": "july-update",
+            "date": "2024-07-01",
+            "author": "Tony",
+            "content": {
+                "description": "In this huge update after the last update from more than 3 months ago, we have a lot of new changes, content, and features to announce, including a NEW BETA COURSE on MacLearn! Check out all the updates we made to MacLearn below!",
+                "paragraphs": [
+                    {
+                        "title": "NEW BETA COURSE: CSS!",
+                        "content": "As we promised, we're releasing the brand new and long waited new course: MacLearn CSS Course, in the fall of 2024, but before that, we need to roll out the beta version for testing and feedback purposes to make MacLearn more perfect. That's why we're releasing the beta course to everyone in this update, with tons of new tutorials, content, topics, quizzes, units, and so much more about CSS! Although we're still massively updating the beta course and its articles, we're releasing it to the public for you to learn a bit more and give feedback to improve MacLearn! We hope to turn MacLearn into the best platform to aquire an important skill, that's why we're constantly releasing and updating courses about web development, and make you a master of it! With the addition of the CSS course, MacLearn will have more resources than ever for a beginner like you to learn about web dev 🆕!"
+                    },
+                    {
+                        "title": "NEW LEARNING PATH!",
+                        "content": "We completely replanned the learning paths of our courses to make your learning experience the most efficient, effective, and easy way to learn and master a new skill! Previously, we only had two units with two quizzes with a bunch of tutorials, but now, we seperated articles into smaller units that have tutorials focusing on the same topic, boosting the efficiency on understanding. We also added a bunch new quizzes at the end of each smaller unit (that's a lot more quizzes!) to make you practice and think about what you learned to root your understanding. With these changes, it's easier than ever to learn, practice, review, and master the skill with a better flow of knowledge 🗺️!"
+                    },
+                    {
+                        "title": "NEW COURSE STRUCTURES!",
+                        "content": "Along with the seperation of smaller units focusing on a key topic, we seperated each course into two sections: Beginner and Advanced, each with 5 to 8 different subunits with a quiz at the end of each subunit. That makes a total of almost 20 quizzes and exercises in a course, meaning that you have more opportunites to practice what you've learned on the key topics, and move on to focus on the next. There's also new buttons at the bottom of the side bar that takes you to the previous or the next section, for easier navigation between the large collection of resources here on MacLearn 🏫!"
+                    },
+                    {
+                        "title": "CONTENT UPDATES!",
+                        "content": "Because of the major updates on our course structure, there's a lot to be updated! We created a bunch of new tutorials and articles to provide even more knowledge and resources on the key topics of the subunits, and we also updated the content of each article to be more accurate and focused on the key topic. On top of that, we released new quizzes that also focus on the key topics, to make sure you've really mastered that subunit! We also updated some outdated content and reorganized some files and folders for a cleaner, faster, and smoother experience on MacLearn 🔥!"
+                    },
+                    {
+                        "title": "APPEARANCE UPDATES!",
+                        "content": "With the constant improvements on the styling of MacWeb apps, many of MacLearn's older pages and articles are getting out of date, so we updated our styling on MacLearn Playground to look more modern and match with the new designs of MacLearn. We also updated some older pages' layouts and appearance to fix broken styling and to make the pages look more clean and unified with other MacLearn pages. We also applied some minor changes to the genral appearance of MacLearn. Enjoy the new refreshed look of the pages 🖌️!"
+                    }
+                ],
+                "others": [
+                    "Updated content on many pages and tutorials.",
+                    "Fixed navigation issues on the side bar.",
+                    "Fixed navigation issues on the navigation bar.",
+                    "Fixed navigation issues on older pages.",
+                    "Fixed navigation issues on some quizzes.",
+                    "Fixed broken styling and layouts on older pages.",
+                    "Reorganized some files and folders.",
+                    "Minor appearance and functionality changes."
+                ],
+                "menulinks": [
+                    "New Course",
+                    "Learning Path",
+                    "Course Structure",
+                    "Content Updates",
+                    "Appearance Updates",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.19 September Update",
+            "sidetitle": "September Update",
+            "slug": "september-update",
+            "date": "2024-09-01",
+            "author": "Tony",
+            "content": {
+                "description": "We've released MacLearn, massively updated it, and added so much new stuff and content in the past year, and we're finally moving from its early phases closer and closer to v.1.0 release. In this crazy massive update, we jumped straight from v.0.14 to v.0.18, and for a good reason. Even though there's only 5 changes, they're all massive. We changed almost everything about MacLearn in this huge update. Here's what's new:",
+                "paragraphs": [
+                    {
+                        "title": "HUGE COURSE RESTRUCTURE",
+                        "content": "This is easily the biggest change we've ever applied to MacLearn. We had some rather ambitious plans of courses for MacLearn in the future, but because we're a small team and there's many other apps we're also actively working on, it's impossible to achieve these plans and complete the 20+ courses ranging from algebra to history. So we cancelled them. There's just not enoughh resources and time available, and it might not be worth it if we went all in and developed these courses. This is a loss on MacLearn's potential, but after the initial stages of MacLearn and after everything's done, fixed, and stabilized, and after we've grown enough, maybe there's a chance we'll bring some of these courses (or all of them) back in the future. For now, we've reduced the original planned 26 courses down to 3, focusing on our basic web development courses: HTML, CSS, and References. HTML is currently in beta testing, and CSS and References are still in development. We hope the reimagined and restructured MacLearn can be more focused on a few specific courses, bringing more educational resources to people interested in these topics. See you there 🎒!"
+                    },
+                    {
+                        "title": "FOLDERS & FILES REORGANIZATION",
+                        "content": "Other than the huge removal of courses and deleting their related files and folders, we also updated how we organize our files and folders within MacLearn's structure. We moved some files/folders around, deleted many unneccessary files/folders, renamed some things, and made the site's files more organized and clean to work with. Because of this change, we had to update a lot of pages because of the huge file organization changes and fixed many broken links/styling along the process. This made MacLearn feel much more clean and fresh 📂."
+                    },
+                    {
+                        "title": "CSS ADVANCED SECTION!",
+                        "content": "In this update, we're releasing the advanced section of the CSS course! This is a huge step forward on the development of MacLearn, because it provides even more tutorials, resources, and education on the advanced aspects of CSS, making the course more complete and resourceful for everyone. Because the advanced section is released, we're adding a bunch more advanced tutorials, pages, and more! We also updated and fixed broken links in the course sidebar navigation and the CSS homepage because of the advanced section addition 📚!"
+                    },
+                    {
+                        "title": "CSS BEGINNER SECTION COMPLETED!",
+                        "content": "We're very excited to announce that the beginner section of the newest released course, MacLearn CSS Course, is complete! All the articles, tutorials, and resources you need to learn the basics for CSS are all completed and finished! We added so many new articles and tutorials, improved the navigation of the section, and updated a bunch of old content and patched many bugs. The quizzes and exercises in this section will be completed in the next update. The CSS course is now better than ever for you to start learning and styling your website 🖌️!"
+                    },
+                    {
+                        "title": "NEW TAB: Me!",
+                        "content": "What's the point of a learning platform if you can't track your own learning progress? That's what the brand new Me Tab is for! With the new Me, you can now check your learner's profile on MacLearn, how much progress you've made on your courses, along with your starred pages and tutorials. With this useful new tab, your learning experience is more customized than ever! More features and customization to your profile will be coming in future updates, so stay tuned 🧑‍🎓!"
+                    }
+                ],
+                "others": [
+                    "Added new pages and tutorials.",
+                    "Updated links, images, and content on many pages and tutorials.",
+                    "Fixed navigation issues on the side bar.",
+                    "Fixed broken styling and layouts on older pages.",
+                    "Removed the hover tilting effect from the homepage.",
+                    "Removed the announcement banner on unneeded pages.",
+                    "Minor bug fixes.",
+                    "Minor appearance and functionality changes."
+                ],
+                "menulinks": [
+                    "Course Restructure",
+                    "File Reorganization",
+                    "CSS Advanced",
+                    "CSS Completed",
+                    "New Tab: Me",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.23 November Update",
+            "sidetitle": "November Update",
+            "slug": "november-update",
+            "date": "2024-11-01",
+            "author": "Tony",
+            "content": {
+                "description": "This huge update is yet another big step towards MacLearn's version 1.0. With this update, we're completing all the courses, perfecting the website, bringing a huge refreshed redesign to the platform, and so much more! Here are what we changed in this crazy update:",
+                "paragraphs": [
+                    {
+                        "title": "CSS ADVANCED COMPLETED!",
+                        "content": "We introduced the CSS course advanced section just last update, and we've already added all the tutorials in the CSS advanced section in this update! Now, you can fully access all the resources and lessons we've created for more advanced CSS concepts! Not only will this help you learn and understand more about CSS, it also marks the completion of the CSS course on MacLearn ✅!"
+                    },
+                    {
+                        "title": "ENTIRE CSS COURSE COMPLETED!",
+                        "content": "Not only did we finish adding all the tutorials in the CSS advanced section, we also finished adding and perfecting all the quizzes and exercises in both the CSS advanced section and the CSS beginner section in this update! Now, you can practice all the skills you've learned from the course in well-designed quizzes that will boost your understanding of CSS concepts even more! This means that we've finished adding everything we planned for the CSS course, meaning that all the courses on MacLearn are now completed 🔥!"
+                    },
+                    {
+                        "title": "REDESIGNED & REFRESHED",
+                        "content": "Since MacLearn is our oldest app, its styling, design, and UI were very outdated and chaotic, so with the recent release of MacWeb Site Material 5.0, we've decided to use this opportunity to compltely redesign the looks and layouts of MacLearn from the ground up using MacWeb Site Material 5.0. We made it so that the platform looks more consitent from page to page, more modern, and focuses your attention on the important information. We also made the user experience more intuitive and easier to navigate. From now on, you can enjoy an easier, more modern, organized, appealing, useful, and intuitive experience when using MacLearn 🖊️! (Note that this is a very huge change on MacLearn, so it's still a work in progress, but most of MacLearn already has the new design applied)"
+                    },
+                    {
+                        "title": "CODE LABS 2.0",
+                        "content": "The old interactive playground, Code Labs 1.0, featured a code editor on the left, and an output window on the right. Sure, it worked fine, but it's not good enough for MacLearn. Today, we're introducing Code Labs 2.0 that features tabs for different editors and the output window! Every interactive Code Lab now has 4 different tabs that you can switch from: HTML, CSS, JavaScript, and Output. You can switch between different languages' editors in no time. We made this change so there's a lot more space to work with, when coding or when viewing the output, instead of the old cramped space that's divided in half. You also get to see and modify different languages' codes, instead of only one language. Other than this, we also enhanced the overall experience and updated some Code Labs' content 🧪!"
+                    },
+                    {
+                        "title": "CONTENT UPDATES",
+                        "content": "In this huge update, we also updated a lot of tutorials' content and information to keep them up to date and useful when learning about web development. We optimized the code behind every single tutorial on the platform for them to load faster, more readable, and more organized with all that information. This update makes your experience on MacLearn more seamless than ever 🏫!"
+                    },
+                    {
+                        "title": "CONTENT IMPROVEMENTS",
+                        "content": "Other than all the huge changes listed above, we also fixed and improved a lot of aspects about MacLearn. Because of the new design system and UI, we've moved the Me tab to the profile icon on the top right corner or the screen. We also revamped the CSS course homepage because of all the exciting new tutorials and quizzes. And, you can now save CSS tutorials to the Me tab, too. We made all these changes to help make your experience on MacLearn easier, more intuitive, and seamless 💪."
+                    },
+                    {
+                        "title": "NEW UPDATE SCHEDULE",
+                        "content": "Just like the new update schedule we're applying to other MacWeb apps, MacLearn is also getting a new update schedule. From this update forward, MacLearn is going to get an update every 3 months. This means we'll release a new update for MacLearn each quarter of the year. Specifically, February, May, August, and November. Each update will be named after the season (Spring Update, Fall Update, etc). We made this change so the schedule is more consitent and regular and we have more time to develop exciting new features 📅!"
+                    }
+                ],
+                "others": [
+                    "Updated major tabs' content.",
+                    "Updated some interactive Code Labs.",
+                    "Updated some tutorials' content.",
+                    "Updated dates on some tutorials.",
+                    "Fixed broken styling and layouts on older pages.",
+                    "Minor bug fixes.",
+                    "Minor appearance and functionality changes."
+                ],
+                "menulinks": [
+                    "CSS Advanced",
+                    "CSS Completed",
+                    "Redesign",
+                    "Code Labs 2.0",
+                    "Content Updates",
+                    "Content Improvements",
+                    "Update Schedule",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.0.25 Winter Update",
+            "sidetitle": "Winter Update",
+            "slug": "winter-update",
+            "date": "2025-02-01",
+            "author": "Tony",
+            "content": {
+                "description": "This huge update is yet another big step towards MacLearn's version 1.0. With this update, we've completed applying the Site Material 5.0 redesign across the entire platform and every single page, updated site content, improved and fixed a bunch of stuff, and so much more! Here are what we changed in this crazy update:",
+                "paragraphs": [
+                    {
+                        "title": "REDESIGN COMPLETED!",
+                        "content": "Since last update, we've been hard at work to complete applying the new Site Material 5.0 redesign across the entire platform to improve usability, visual appearance, and overall performance of MacLearn. In this update, we updated every HTML tutorial page to give them the cleaner better redesigned view and interface. We also applied the redesign to every HTML and CSS quiz page and some other pages on MacLearn to ensure everything works properly and look unified 🔥!"
+                    },
+                    {
+                        "title": "CONTENT IMPROVEMENTS!",
+                        "content": "To ensure each page works as expected with the new Site Material 5.0 redesign, we updated every HTML tutorial page's content and user interface. We also temporarily removed the Save, Report, and Share features to make sure the platform doesn't break. Don't worry, they'll come back next update or in the near future. We also fixed a bunch of appearance bugs and updated some site appearance on older pages to match with the redesign. We removed some unneccesary files and code and optimized some code as well. We also changed the update announcement modal with a new thumbnail image and layout to match with MacWeb's design system 💪."
+                    }
+                ],
+                "others": [
+                    "Updated some interactive Code Labs.",
+                    "Updated some tutorials' content.",
+                    "Fixed broken styling and layouts on older pages.",
+                    "Removed extra code and files.",
+                    "Appearance and functionality changes.",
+                    "Minor bug fixes."
+                ],
+                "menulinks": [
+                    "Redesign Completed",
+                    "Content Improvements",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "MacLearn v.1.0 Spring Release!",
+            "sidetitle": "Spring Release",
+            "slug": "spring-release",
+            "date": "2025-05-01",
+            "author": "Tony",
+            "content": {
+                "description": "We're very excited to announce that MacLearn v1.0 is finally here — the biggest update on the app ever. This update isn’t just a version bump — it’s a total transformation. From fully dynamic article and quiz generation, to powerful new features like search, XP tracking, achievements, notifications, and recently viewed tracking, MacLearn Spring Release brings a completely revamped learning experience. The entire platform is now cleaner, faster, and smarter — with better code, fewer files, and 100% dynamically generated posts to optimize performance. CSS and HTML courses are fully dynamic, quizzes have been reworked and optimized, and references now come with Code Labs, save/share/report buttons, and improved UI. Welcome to the first official release of MacLearn.",
+                "paragraphs": [
+                    {
+                        "title": "REVAMPED POST RENDERING",
+                        "content": "The biggest thing we're changing about MacLearn in this massive update is how articles in courses and quizzes are being generated from data files. Previously, we had everything on static content and it was really difficult, inconvenient and messy to change or update. Now that everything generates dynamically from a single data file the performance of the app has been drastically improved and all the features work together seamlessly and it's also way easier for us to update and maintain the contain or code. This change affects every course and reference on the platform right now 💻!"
+                    },
+                    {
+                        "title": "REVAMPED QUIZZES",
+                        "content": "Because we completely changed how quizzes are rendered from the data files, we also used this chance to organize the code and the questions for the quizzes into a single file that's incredibly optimized and fast. We not only updated the questions, we added analysis for the questions and the correct answers as well so you can see what you did wrong, what the correct option is, and improve next time. We also fixed a bunch of bugs in quizzes 🔥."
+                    },
+                    {
+                        "title": "SEARCH",
+                        "content": "As MacLearn keeps expanding with new content, courses, and more, it might be a little hard to navigate around the platform the quickly find the information you need, so we're rolling out a new search bar at the top of each page to help you quickly find and acces whatever information you need! Simply type a keyword and you'll see a page with results listed if there's anything in the title or article that matches the keyword along with a preview of the article! This makes finding information way more convenient and easier for everyone 🔍!"
+                    },
+                    {
+                        "title": "COURSE COMPLETION",
+                        "content": "We're introducing a new item on MacLearn: XP! Everytime you complete a quiz in any course with 100% accuracy you earn 100 XP along with a notification for it. XP offers a way to keep track of your progress on the quizzes and provide more motivation for your learning! You can check your XP from the home page where there's a progress bar for each course showing how much of the total XP you've collected. If you collect all the XP in a course, you officially finish the course 📚!"
+                    },
+                    {
+                        "title": "REVAMPED ME PAGE",
+                        "content": "We're adding 2 new sections along side the Saved section to the Me page in this update: Achievements and Recently Viewed! You can now earn achievements for learning and completing quizzes on MacLearn regularly that show on your learner profile! A notification also shows up when you earn one so you get your accomplishment! This gamifies the learning process and makes it more engaging and fun. With the Recently Viewed section, you can see the last 5 most recent articles you read on MacLearn and have easy access to quickly hop back to where you left off and keep learning! We also added a clear data option in case you want to wipe all your data on MacLearn 🏅."
+                    },
+                    {
+                        "title": "CONTENT IMPROVEMENTS!",
+                        "content": "We've added the Save, Share, and Report buttons back to both the HTML and CSS course, as well as all of the references! Instead of showing a panel of social media links, the Share button now directly copies the article link onto your clipboard so you can share it easily however you want! You can now save or share your favorite articles from anywhere on MacLearn easily with these buttons on the top of the page. We also added new notifications that pop up from user actions such as saving an article, completing a quiz, and more! Other than that, we also incorporated Code Labs into references so you can quickly check out the code function without leaving the page and aquire the knowledge better! We also updated some references and content across the platform to make everything more up to date 💪."
+                    }
+                ],
+                "others": [
+                    "Fixed appearance bugs and problems.",
+                    "Reorganized and deleted many unused files.",
+                    "Updated coruse homepage links and Me Saved page links.",
+                    "Updated footer year display.",
+                    "Fixed HTML Code Lab not showing full code.",
+                    "Fixed HTML Code Lab render styling bug.",
+                    "All quiz code files have been merged into one single file.",
+                    "Optimized quiz code.",
+                    "No longer able to go back after finishing a quiz.",
+                    "Removed all static HTML files in all courses.",
+                    "Removed redundant code and files."
+                ],
+                "menulinks": [
+                    "Revamped Post Rendering",
+                    "Revamped Quizzes",
+                    "Search",
+                    "Course Completion",
+                    "Revamped Me Page",
+                    "Content Improvements",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "category": "Update",
+            "app": "MacLearn",
+            "title": "Introducing: MacLearn 2.0",
+            "sidetitle": "Summer Update",
+            "slug": "summer-update",
+            "date": "2025-08-01",
+            "author": "Tony",
+            "content": {
+                "description": "We've said this so many times, but I promise this is the last \"MacLearn's biggest update ever!!!\" update. We've completely rewritten the code behind MacLearn with a brand new modern technology to massively enhance the interactivity, features, and performance of MacLearn. We also released many new features with this update, so let's welcome the Summer update!",
+                "paragraphs": [
+                    {
+                        "title": "MacLearn Reengineered",
+                        "content": "We've rebuilt every bit of MacLearn from the ground up with the modern JavaScript library React instead of vanilla plain JavaScript to massively improve the app's interactivity and performance so your learning experience on MacLearn can be smoother than ever. Because React is so scalable and flexible, we won't have to fundamentally change how MacLearn works again, which means no more \"biggest update ever!\". This also changes the structure of the files and data and how everything's rendered, so a lot of bugs are also removed. React is built for app interactivity, so all the features on MacLearn such as quizzes, code lab, search, favorite, etc will be faster and smoother than ever. This change also makes the development of the app more manageble and improves the scalability of the code, which means we can push out updates with more features and consistency in the future! Changing to a different programming language also unlocks a bunch of new features for us, such as adding subtle animations across MacLearn so your learning experience is more interactive 🔥!"
+                    },
+                    {
+                        "title": "MacLearn Redesigned",
+                        "content": "Because we were already redeveloping the app from scratch, we used the freedom to do whatever we wanted with the app to also completely redesign MacLearn's user interface so it's easier to use and look more visually appealing and modern. Every page across the platform is now darker, sleeker, and more consistent with other elements on the page! Better colors, spacing, layout, and typography will ensure you get the best experience reading articles and navigating between apps! We've removed a bunch of outdated content and replaced it with new up to date pages for better learning resrouces. Not only that, we redesigned MacLearn's logo as well to honor this version 2.0 milestone. We removed the white hexagon from the logo so it's just a simple blue rounded square with a book 🖌️!"
+                    },
+                    {
+                        "title": "New Features",
+                        "content": "We're aiming to make all MacWeb apps consitent, which not only incldues the overall design, but also the page elements and features. We revamped all the outdated article buttons (favorite, share, report) so they work more seamlessly and fit with the new design better! We've introduced a new navigation bar and a new footer across MacWeb apps with the transition to using React, and that includes MacLearn too. You can now toggle the site between light and dark modes directly with the sun icon on the top right to customize the site to fit your likings better! This makes the site more accessible because everyone has different preferences and we're working hard to satisfy everyone's needs at once. You can also click on the GitHub icon next to the light mode toggle to view MacLearn's source code, and you're more than welcome to contribute either by submitting an issue or a pull request! We've also made the site's navigation more accessible to everyone by putting MacLearn tabs, information links, other MacWeb apps, our social links, and credits to the new footer at the bottom of every page 💡!"
+                    },
+                    {
+                        "title": "Revamped Tabs",
+                        "content": "We updated a bunch of tabs and pages on MacLearn while transitioning the app to React. We added an accordion element on course pages so you can show and collapse each unit of the course with the articles and quizzes clearly listed out in order! The me page also has the new accordion for saved articles and pages. On top of that, the recent actvities section on the me page now also displays recently viewed quizzes 📖."
+                    }
+                ],
+                "others": [
+                    "Improved a lot of features.",
+                    "Improved article navigation.",
+                    "Added more notifications.",
+                    "Updated site navigation.",
+                    "Updated app icons and logos.",
+                    "Updated outdated content.",
+                    "Updated file paths and folders.",
+                    "Improved routing and URL paths.",
+                    "Fixed deployment issues.",
+                    "Fixed analytics tracking.",
+                    "Fixed bugs."
+                ],
+                "menulinks": [
+                    "MacLearn Reengineered",
+                    "MacLearn Redesigned",
+                    "New Features",
+                    "Revamped Tabs",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "category": "Tip",
+            "title": "MacLearn Tips",
+            "description": "Tips about MacLearn",
+            "sidetitle": "MacLearn Tips",
+            "slug": "maclearn-tips",
+            "date": "2026-01-31",
+            "author": "Tony",
+            "content": {
+                "description": "Here are some tips and tricks to help you use MacLearn better.",
+                "paragraphs": [
+                    {
+                        "title": "Main features",
+                        "content": "Articles and stuff idk."
+                    }
+                ],
+                "others": [
+                    "something else abt maclearn i guess"
+                ],
+                "menulinks": [
+                    "Main Features",
+                    "Others"
+                ]
+            }
+        }
+    ]
+}

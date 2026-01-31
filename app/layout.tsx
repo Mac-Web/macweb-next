@@ -6,6 +6,7 @@ import Nav from "@/components/ui/Nav";
 import User from "@/components/ui/User";
 import Provider from "./Provider";
 import Theme from "@/components/Theme";
+import Footer from "@/components/ui/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,6 +46,7 @@ export default function RootLayout({
               <User />
             </Nav>
             {children}
+            <Footer />
           </Provider>
         </Theme>
       </body>

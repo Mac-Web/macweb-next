@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import SigninBtn from "@/components/SigninBtn";
 import Card from "@/components/Card";
 import Section from "@/components/ui/Section";
-import Footer from "@/components/ui/Footer";
 
 export default function Page() {
   const { data: session } = useSession();
@@ -69,7 +68,6 @@ export default function Page() {
         img="/logos/macblog.png"
         odd={true}
       /> */}
-      <Footer />
     </motion.div>
   );
 }

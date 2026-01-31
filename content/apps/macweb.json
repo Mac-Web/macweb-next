@@ -1,0 +1,357 @@
+{
+    "id": 1,
+    "slug": "macweb",
+    "name": "MacWeb",
+    "link": "https://macweb.app",
+    "releaseDate": "10/23/2023",
+    "logo": "macweb.png",
+    "description": "Introducing MacWeb, the all-in-one app that helps you improve, makes you more productive, and provides you with top-tier entertainment experiences! We develop all kinds of online apps with extremely high quality with many features aimed to help your internet life!",
+    "posts": [
+        {
+            "id": 0,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Prerelease Update Log",
+            "sidetitle": "Prerelease Log",
+            "slug": "prerelase-log",
+            "date": "2023-04-13",
+            "author": "Tony",
+            "content": {
+                "description": "All right, I'm just warning you here that this is very weird. I (this was back when this company was single-membered) didn't do a very good job recording down at exactly what date I did what, so some of these could be the wrong dates, and I'm not even sure the actual release date of MacWeb??? (probably 9.17.2023) And there's also logs that happened after the release and whatever garbage? Sorry, this is just too confusing, so here is the very messy update log:",
+                "paragraphs": [
+                    {
+                        "title": "4.13.2023",
+                        "content": "I started my isolated Portfolio website on Replit, put my projects in it, and published it on Replit."
+                    },
+                    {
+                        "title": "6.15.2023",
+                        "content": "I created MacVG (previously TonyMac129) with 286 games, lots of features, and more."
+                    },
+                    {
+                        "title": "9.6.2023",
+                        "content": "I gave my portfolio a small revamp."
+                    },
+                    {
+                        "title": "9.13.2023",
+                        "content": "I renamed TonyMac129 to MacVG and had the idea to merge all my websites and projects into a big personal website (what you're looking at right now) so it's easier to organize files and stuff."
+                    },
+                    {
+                        "title": "9.16.2023",
+                        "content": "Planned on what the website looks like; decided to put all my projects, webpages, websites, coding files, portfolio, and more in it; and changed GitHub username."
+                    },
+                    {
+                        "title": "9.17.2023",
+                        "content": "Created MacWeb website; the basic structure of the website; organized MacVG, Portfolio, and all related files, folders, webpages, and materials into the website; created the home page; the about page; linked webpages to MacWeb; created the UI design; the logo; and published the website to GitHub."
+                    },
+                    {
+                        "title": "9.19.2023",
+                        "content": "Updated the broken UI and content for the \"Coding\" page in MacWeb Portfolio, the nav bar user effect, and fixed pages connection errors. "
+                    },
+                    {
+                        "title": "9.22.2023",
+                        "content": "Completed & further improved the content in the \"Coding\" page in MacWeb Portfolio, the nav bar revamp and UI updates on the older pages, structure reorganization, new Portfolio logo, new pages and updates projects in portfolio, and error fixes. "
+                    },
+                    {
+                        "title": "10.9.2023 ~ 10.22.2023",
+                        "content": "Moved MacWeb portfolio to an isolated website and gave it a revamp (again), planned about apps to make, app tree, organized the whole company, hired new members, organized apps and stuff, and uploaded a lot of new things, making the future roadmap for MacWeb clearer."
+                    },
+                    {
+                        "title": "10.17.2023",
+                        "content": "Acquired Coding Place into MacWeb company for free (it was my old project) as MacCode and did some file organization, app tree improvements, and appearance changes."
+                    },
+                    {
+                        "title": "10.23.2023",
+                        "content": "Acquired Ify for free (it was my older project, too) into MacWeb company as MacWork and did some file organization, app tree improvements, and appearance changes."
+                    },
+                    {
+                        "title": "10.27.2023",
+                        "content": "Reorganized apps and home page, and added the Blogs page for MacWeb."
+                    },
+                    {
+                        "title": "11.6.2023",
+                        "content": "Started working on MacWork. (will release soon!!!hopefully)"
+                    }
+                ],
+                "others": [
+                    "Isolated my portfolio into another seperate website that's completely seprated from MacWeb."
+                ],
+                "menulinks": [
+                    "4.13.2023",
+                    "6.15.2023",
+                    "9.6.2023",
+                    "9.13.2023",
+                    "9.16.2023",
+                    "9.17.2023",
+                    "9.19.2023",
+                    "9.22.2023",
+                    "10.9.2023 ~ 10.22.2023",
+                    "10.17.2023",
+                    "10.23.2023",
+                    "10.27.2023",
+                    "11.6.2023",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "Introducing: MacWeb 2.0",
+            "sidetitle": "MacWeb 2.0",
+            "slug": "macweb-2.0",
+            "date": "2025-07-30",
+            "author": "Tony",
+            "content": {
+                "description": "I know we've said this countless times, but this update, for sure, is the biggest one we've had so far. After all, we're remaking every single MacWeb app from scratch with a brand new technology/programming language to make our apps more flexible, interactive, and easier to maintain, all while incorporating a new look on all the apps. Other than that, we're also making a lot of changes to the apps themselves. Let's see what the new MacWeb is all about:",
+                "paragraphs": [
+                    {
+                        "title": "Remaking Apps",
+                        "content": "We're transitioning every single MacWeb app's programming language from using vanilla JS to the JavaScript library React. This will significantly improve the interactivity, scalability, performance, and managebility of the apps, because we're using reusable components and modules that are dynamically generated and react to user events more quickly. Because we're switching to a new technology to build our apps, we also need to recode all the existing features and programs from scratch, so this will be an extremely big and large-scale update across our apps. We took this oppotunity of having the freedom to do whatever we wanted with the apps and redesigned all our apps, again, this time more appealing, modern, and functional than ever ⚛️!"
+                    },
+                    {
+                        "title": "Site Material 2.0",
+                        "content": "Like we mentioned above, we're completely redesigning the design styles and looks of our apps, as well as incorporating some other new elements and features. With Site Material 2.0, we're incorporating vibrant animations on user interactions and other elements to provide a much better user experience with a small element of fun. We're rolling out a new navigation bar with the logo and the tabs, as well as 2 new buttons: light mode toggle and view source. The light mode button toggles between light and dark modes, providing more customization and accessbility for all kinds of needs on our apps. All of our apps are open source on GitHub, so users can click on the view source button to check our code and even provide contribution/suggestions. We're also adding a more complete footer to each of our apps with more detailed navigation, social links, and more. On top of that, we're updating our apps' logos so they're more simple, distinct, and visually appealing 🎨!"
+                    },
+                    {
+                        "title": "App Changes",
+                        "content": "Because we're doing so much recently with MacWeb 2.0 and everything, we have decided to just focus development on our 2 most popular apps: MacVG and MacLearn. This means we're pausing development on MacTools and MacIdeas as they're not content driven and can't bring us the return we're hoping for right now. In a few years, it's possible we'll continue development, but for now they will not be updated. This doesn't mean they will be shut down, they will still be accessible and work perfectly fine, but they won't be receiving new features, fixes, or changes in a long time. Because we're only focusing on MacVG and MacLearn right now, we're also removing some integration of the apps such as the old MacWeb sidebar used for accessing other MacWeb apps. This kind of breaks the old \"ecosystem\" we had, and our apps are kind of distinct standalone apps now. MacBlog and the MacWeb landing page will not be removed as they serve more as information support apps instead of actual apps like MacVG and MacLearn are 🔥."
+                    },
+                    {
+                        "title": "Landing Page Revamp",
+                        "content": "Other than completely revamping our apps from scratch, we're also reimagining the MacWeb landing page with this huge update. Previously, the landing page was just 5 app link cards and nothing else, which might have confused some users what MacWeb even is. That's why with the new landing page, we not only redesigned the appearance of it, integrated animations, and added the light mode toggle and view source buttons, we also added a short section for each of the 5 apps with the app's description, logo, and 2 links that take you to the actual app and the MacBlog landing page. This not only gives new users more information on what MacWeb and its apps are, it also provides something old users might not have known before for them to discover. We also added a comprehensive footer at the bottom of the landing page 🧠!"
+                    },
+                    {
+                        "title": "Version Changes",
+                        "content": "We're resetting the versions of MacWeb, Site Material, and all of our apps (excluding MacIdeas and MacTools as they will not be updated) to be at v.2.0 regardless of previous versions, because the apps are being rebuilt from the ground up with a brand new programming language with a brand new design, along with a ton of new features, content, and more. The apps are also more interactive, flexible, visually appealing, and functional than ever before 📈!"
+                    },
+                    {
+                        "title": "The Future",
+                        "content": "We're very excited to share our vision of MacWeb 2.0 with all of you in the future with a ton of new content, features, and even new apps! Given enough time, resources, and support from the users, we could enhance all our apps with advanced features such as user-generated content, user data, real time applications, AI features, and more! We're also looking to hire more talented developers and people to help out with improving our apps, increasing income, reviving MacIdeas and MacTools, and publishing more powerful apps in the future 📱!"
+                    }
+                ],
+                "others": [
+                    "Updated app icons and logos.",
+                    "Improved routing and URL paths."
+                ],
+                "menulinks": [
+                    "Remaking Apps",
+                    "Site Material 2.0",
+                    "App Changes",
+                    "Landing Page Revamp",
+                    "Version Changes",
+                    "The Future",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Site Material 1.5",
+            "sidetitle": "Site Material 1.5",
+            "slug": "site-material-1.5",
+            "date": "2023-11-28",
+            "author": "Tony",
+            "content": {
+                "description": "To be honest, MacWeb was a huge mess before the release of Site Material. Site Material is a new way to imagine MacWeb, it specifies the styling and looks of a MacWeb app, it also determines how MacWeb app works. Site Material makes our apps look unified, modern, and functional. It makes your experience with MacWeb better, more modern, and more seamless than ever. Let's see what's new with this version of Site Material:",
+                "paragraphs": [
+                    {
+                        "title": "NAVIGATION BAR!",
+                        "content": "We're clearing things out on how MacWeb apps work. The navigation bar on the top of each app guides you through different Tabs, or pages and subapps, of that app. It's a quick way for you to navigate through that MacWeb app."
+                    },
+                    {
+                        "title": "SIDEBAR",
+                        "content": "Sidebar is a little bit different than the navigation bar. The navigation bar navigates you in the app, but the sidebar navigates you out of the app, into different MacWeb apps. It basically guides you through the entire MacWeb system. It appears when you hit your cursor to the left edge of the screen, and there's gonna be a small vertical bar that pops up with app logos, allowing you to navigate."
+                    }
+                ],
+                "others": [
+                    "We organized our apps, plans, projects, and app tree for what we're focusing on right now and what we can wait for a year or two!"
+                ],
+                "menulinks": [
+                    "Navigation Bar",
+                    "Sidebar",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Site Material 2",
+            "sidetitle": "Site Material 2",
+            "slug": "site-material-2",
+            "date": "2024-01-19",
+            "author": "Tony",
+            "content": {
+                "description": "Before this important appearance update, MacWeb is still a chaotic new born app and each app looks and works differently from each other. The appearance was also not up to date and not very functional, that's why we poured hours of work into redesigning and reimagining the entire MacWeb, making Site Material 2. Let's see what's new here:",
+                "paragraphs": [
+                    {
+                        "title": "ROLLING OUT NOW!",
+                        "content": "Updates of the MacWeb Site Material 2 appearance have been rolling out since November, but today, all of MacWeb's apps, pages, and every single place of MacWeb finished updating to Site Material 2!"
+                    },
+                    {
+                        "title": "NEW VERTICLE SIDEBAR!",
+                        "content": "New vertical sidebar on the left of each page of each MacWeb app that navigates you through different MacWeb apps, and it only appears when the user's cursor hits the left edge of the screen, and if you click anywhere else, the sidebar's gonna hide away again, to save more space to focus, while also having the convenience of navigating between different apps!"
+                    },
+                    {
+                        "title": "NEW EFFECTS!",
+                        "content": "New hovering effect when hovering over different tabs within a MacWeb app, for more modern and appealing effects and user experience!"
+                    },
+                    {
+                        "title": "NEW LOGOS!",
+                        "content": "New logos for each MacWeb app that look more distinct, clearn, modern, and easy to recgonize! We also applied the new logos to the logo at the top left of the horizontal navigational bar to make the app more unified and visually appealing!"
+                    }
+                ],
+                "others": [
+                    "Minor appearance updates.",
+                    "Minor navigational updates.",
+                    "Reorganized files and content for a faster and seamless experience."
+                ],
+                "menulinks": [
+                    "Rolling Out Now",
+                    "New Sidebar",
+                    "New Effects",
+                    "New Logos",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Site Material 2.1",
+            "sidetitle": "Site Material 2.1",
+            "slug": "site-material-2.1",
+            "date": "2024-03-16",
+            "author": "Tony",
+            "content": {
+                "description": "As we keep expanding and developing new features and apps in MacWeb, we're also making new appearance changes, including the release of MacWeb Site Material 2.1 that brings a brand new look to the apps that you love!",
+                "paragraphs": [
+                    {
+                        "title": "NEW COLORS FOR EACH APP",
+                        "content": "We gave each of our apps a distinct main color so you can distinct them easily from each other, and it also looks more vibrant with the vivid colors. We gave MacLearn a blue color, which associates with growth and education, so it perfectly reflects the purpose of MacLearn. We also gave MacTime a green color, which means management and improvement, and MacVG orange, which means excitement and vibrancy. We gave MacBlog a purple color, which associates with information. This change unifies the appearance of each page in MacWeb apps, distincts each app from each other, and it has a better look than the old color schemes with random colors being used. This is a huge improvement on design. The new colors are used as the logo color, accent color, and primary color within each app, with mainly neutral background."
+                    },
+                    {
+                        "title": "NEW APPEARANCE!",
+                        "content": "General appearance changes that match MacWeb apps with Site Material 2.1."
+                    }
+                ],
+                "others": [
+                    "Navigation fixes and bug fixes."
+                ],
+                "menulinks": [
+                    "New Colors",
+                    "New Appearance",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Site Material 3",
+            "sidetitle": "Site Material 3",
+            "slug": "site-material-3",
+            "date": "2024-05-01",
+            "author": "Tony",
+            "content": {
+                "description": "In the huge overall MacWeb May update, we released a new app, released a bunch of new features, content, and fixes on many of our apps, and we're also launching the brand new designs of MacWeb Site Material 3! Responsive designs, mobile improvements, accessibility enhancements, and a more modernized look, all coming in Site Material 3! Let's see what's new:",
+                "paragraphs": [
+                    {
+                        "title": "RESPONSIVE DESIGN & MOBILE",
+                        "content": "The main highlight, and the one we spent the most time on, is the responsive designs on each MacWeb app so it works across different screens and devices. We had very annoying and ugly appearance issues when you use other devices than a computer to use the apps or when you're zooming in. To fix this, the navigation bar on the top auto adjusts its content, fitting all the links into one dropdown menu. If that's still too crowded, there's gonna be a button that expands the side menu for links. This update made the navigation and the experience using the app way more convenient, fast, cleaner, and easier on the eyes. The content also auto adjusts to fit the screen size and not waste any space or stretching out of the screen. Here are some before and after comparison images of this huge improvement 📱.<img src=\"/macblog/media/43-img-1.png\" style=\"width: 100%; margin-top: 20px; border-radius: 10px;\"><img src=\"/macblog/media/43-img-2.png\" style=\"width: 100%; margin-top: 20px; border-radius: 10px;\">"
+                    },
+                    {
+                        "title": "APPEARANCE UPDATES",
+                        "content": " Other than the responsive design interface, we also updated our navigation and content apperances to make it more user friendly, modern, and clean. We also fixed some styling issues and bugs such as animations not working properly, wrong colors, spacing issues, and more. With this enhancement, we hope to bring a better experience to all our users, no matter what device they're using 🔥!"
+                    }
+                ],
+                "others": [
+                    "Minor appearance updates.",
+                    "Minor navigational updates.",
+                    "Minor file organization changes.",
+                    "Appearance bug fixes."
+                ],
+                "menulinks": [
+                    "Responsive Design & Mobile",
+                    "Appearance Updates",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "category": "Update",
+            "app": "MacWeb",
+            "title": "MacWeb Site Material 5",
+            "sidetitle": "Site Material 5",
+            "slug": "site-material-5",
+            "date": "2024-10-25",
+            "author": "Tony",
+            "content": {
+                "description": "This is THE single biggest update across all of MacWeb ever! Last time we released a new version of MacWeb Site Material was only version 3, and this update we skipped version 4 and came directly to 5. That's how big this update on our design material is! Our UI, UX, layout, designs, colors, and everything else got changed on this huge site material update! With this huge update, your experience on MacWeb is enhanced and improved by a lot, so let's see what's new with Site Material 5:",
+                "paragraphs": [
+                    {
+                        "title": "NEW UI, UX & LAYOUT",
+                        "content": "Our most important goal for this Site Material update is to make the designs and UI of all MacWeb apps look more modern, easier to use, and more consitent with each other. The old Site Material we had on our apps was inconsitent, inefficient, and kind of outdated. That's why we completely redesigned almost everything on all our apps (that's a lot a lot a lot of work trust me)! From a new unified navigation bar design and effects, to brand new layouts on different pages and new sidebars, we've completely revamped the designs of all MacWeb apps! We also changed all the buttons, links, and cards everywhere to work more intuitively, look better, and more consitent across different apps. Check the refreshed redesigned apps out for yourself to see the massive style changes we've applied to the apps 🔥! (note that this is still a work in progress and some things are still being tweaked)"
+                    },
+                    {
+                        "title": "NEW COLORS!",
+                        "content": "We've changed the color palette of Site Material so almost everything has the same main background color, with darker backgrounds for cards, and primary colors for action buttons or places that need to be emphasized. We also changed up different primary colors for each app a little so the design works with the background better and more smoothly. This makes MacWeb apps look more consitent and more modern, and easier to use than ever 🎨."
+                    },
+                    {
+                        "title": "NEW EFFECTS!",
+                        "content": "New hovering effect when hovering over different tabs within a MacWeb app, for more modern and appealing effects and user experience, and new hover effects on different cards 💡!"
+                    },
+                    {
+                        "title": "NEW UPDATE SCHEDULE!",
+                        "content": "From now on, we'll be applying a new update schedule to all MacWeb apps. From this update forward, each app is going to get an update every 3 months. This means we'll release a new update for it in each quarter of the year. Specifically, February, May, August, and November. Each update will be named after the season (Spring Update, Fall Update, etc). We made this change so the schedule is more consitent and regular and we have more time to develop exciting new features for each of the apps 📅!"
+                    }
+                ],
+                "others": [
+                    "Content updates for Site Material 5 compatibility.",
+                    "Visual updates for Site Material 5 compatibility.",
+                    "Removed unnecessary files for a faster and cleaner experience."
+                ],
+                "menulinks": [
+                    "New UI & UX",
+                    "New Colors",
+                    "New Effects",
+                    "Update Schedule",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "category": "Tip",
+            "title": "MacWeb Tips",
+            "description": "Tips about MacWeb",
+            "sidetitle": "MacWeb Tips",
+            "slug": "macweb-tips",
+            "date": "2026-01-31",
+            "author": "Tony",
+            "content": {
+                "description": "Here are some tips and tricks to help you use MacWeb better.",
+                "paragraphs": [
+                    {
+                        "title": "Main features",
+                        "content": "Apps and stuff idk."
+                    }
+                ],
+                "others": [
+                    "something else abt macweb i guess"
+                ],
+                "menulinks": [
+                    "Main Features",
+                    "Others"
+                ]
+            }
+        }
+    ]
+}

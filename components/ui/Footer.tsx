@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="border-t border-gray-700 py-12 px-5 md:px-20 lg:px-[calc(50%-550px)]  flex flex-wrap md:flex-nowrap gap-y-15 justify-between items-start gap-x-15 mt-12 text-sm">
+    <footer className="border-t border-gray-700 py-12 px-5 md:px-20 lg:px-[calc(50%-550px)]  flex flex-wrap md:flex-nowrap gap-y-15 justify-between items-start gap-x-15 text-sm">
       <div className="footer-column">
         <a
           href=""

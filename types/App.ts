@@ -22,6 +22,8 @@ export type PostType = {
   content: ContentType;
 };
 
+export type GroupedType = Record<string, PostType[]>;
+
 export type AppType = {
   id: number;
   slug: string;

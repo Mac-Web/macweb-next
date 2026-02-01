@@ -333,6 +333,7 @@
             "title": "MacWeb Tips",
             "description": "Tips about MacWeb",
             "sidetitle": "MacWeb Tips",
+            "app": "MacWeb",
             "slug": "macweb-tips",
             "date": "2026-01-31",
             "author": "Tony",

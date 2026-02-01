@@ -517,6 +517,7 @@
             "category": "Tip",
             "title": "MacLearn Tips",
             "description": "Tips about MacLearn",
+            "app": "MacLearn",
             "sidetitle": "MacLearn Tips",
             "slug": "maclearn-tips",
             "date": "2026-01-31",

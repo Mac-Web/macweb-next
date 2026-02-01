@@ -829,6 +829,7 @@
             "title": "MacVG Tips",
             "description": "Tips about MacVG",
             "sidetitle": "MacVG Tips",
+            "app": "MacVG",
             "slug": "macvg-tips",
             "date": "2026-01-31",
             "author": "Tony",

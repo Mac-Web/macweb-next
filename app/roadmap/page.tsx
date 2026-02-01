@@ -5,7 +5,7 @@ function Page() {
   return (
     <div>
       <Hero
-        title="Company Roadmap"
+        title="Roadmap"
         description="Our mission is to fulfill everyone's productivity and
             entertainment needs with our powerful apps."
       />

@@ -1,17 +1,16 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import SigninBtn from "@/components/SigninBtn";
 import Card from "@/components/Card";
 import Section from "@/components/ui/Section";
+import Latest from "./Latest";
 
-export default function Page() {
-  const { data: session } = useSession();
+export default async function Page() {
+  const session = await getServerSession(authOptions);
 
   return (
-    <motion.div initial={{ y: 150, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, type: "spring" }}>
-      <div className="flex items-center justify-center flex-col gap-y-7 pt-12 pb-25">
+    <div>
+      <div className="flex items-center justify-center flex-col gap-y-7 py-10">
         <h1 className="text-black dark:text-white text-4xl font-bold text-center">Welcome to MacWeb!</h1>
         {!session && <SigninBtn />}
         <p className="text-gray-800 dark:text-gray-100 text-lg text-center w-[65%]">Select an app below to get started.</p>
@@ -68,6 +67,10 @@ export default function Page() {
         img="/logos/macblog.png"
         odd={true}
       /> */}
-    </motion.div>
+      <div className="my-10">
+        <h2 className="font-bold text-3xl text-center">Latest News</h2>
+        <Latest />
+      </div>
+    </div>
   );
 }

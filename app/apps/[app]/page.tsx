@@ -50,7 +50,7 @@ async function Page({ params }: { params: { app: string } }) {
     <div className="flex flex-col items-center gap-y-10 mb-10">
       <Hero title={appData.name} description={appData.description} />
       <h2 className="text-center text-2xl font-bold">Tips & Documentation</h2>
-      <div className="flex justify-center gap-x-7 flex-wrap px-25">
+      <div className="flex justify-center gap-x-7 flex-wrap">
         {appTips.map((post) => {
           return (
             <PostCard
@@ -64,7 +64,7 @@ async function Page({ params }: { params: { app: string } }) {
         })}
       </div>
       <h2 className="text-center text-2xl font-bold">Updates</h2>
-      <div className="flex justify-center gap-x-7 flex-wrap px-25">
+      <div className="flex justify-center gap-7 flex-wrap">
         {appUpdates.slice(0, 4).map((post) => {
           return (
             <PostCard

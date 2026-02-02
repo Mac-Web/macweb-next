@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
-import Nav from "@/components/ui/Nav";
+import Nav from "@/components/layout/Nav";
 import User from "@/components/ui/User";
 import Provider from "./Provider";
 import Theme from "@/components/Theme";
-import Footer from "@/components/ui/Footer";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",

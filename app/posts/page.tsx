@@ -28,9 +28,9 @@ const posts = postsData as AppType;
 
 function Page() {
   return (
-    <div className="flex flex-col items-center gap-y-10 mb-10">
+    <div className="flex flex-col items-center gap-y-10 mb-10 px-5 md:px-20 lg:px-[calc(50%-550px)]">
       <Hero title="Posts" description="You can find posts for tips and ideas about our apps or just about anything else here!" />
-      <div className="flex justify-center gap-7 flex-wrap px-25">
+      <div className="flex justify-center gap-7 flex-wrap">
         {posts.posts
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
           .map((post, i) => {

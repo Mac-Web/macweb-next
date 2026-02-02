@@ -131,12 +131,12 @@ async function Page({ params }: { params: { app: string; slug: string[] } }) {
   }
 
   return (
-    <div>
+    <div className="px-5 md:px-20 lg:px-[calc(50%-550px)]">
       <Hero
         title={apps[app] + " " + slug[0][0].toUpperCase() + slug[0].slice(1)}
         description={`Check out every ${apps[app]} ${categories[slug[0]].toLowerCase()} here!`}
       />
-      <div className="flex justify-center gap-7 flex-wrap px-25 py-10">
+      <div className="flex justify-center gap-7 flex-wrap py-10">
         {sortedPosts.map((post) => (
           <PostCard
             key={post.id}

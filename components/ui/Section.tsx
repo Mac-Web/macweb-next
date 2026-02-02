@@ -36,7 +36,7 @@ function Section({ title, description, app, color, img, odd }: SectionProps) {
     <motion.div
       className={`flex ${
         odd ? "flex-col-reverse" : "flex-col"
-      } items-center gap-y-10 md:flex-row px-20 md:px-20 lg:px-[calc(50%-550px)] gap-x-20 py-14`}
+      } items-center gap-y-10 md:flex-row px-5 md:px-20 lg:px-[calc(50%-550px)] gap-x-20 py-14`}
       whileInView={{ y: 0, opacity: 1 }}
       initial={{ y: 200, opacity: 0 }}
       transition={{ duration: 0.7, type: "spring" }}

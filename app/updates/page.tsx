@@ -36,12 +36,12 @@ function Page() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className="flex flex-col items-center gap-y-10 mb-10">
+    <div className="flex flex-col items-center gap-y-10 mb-10 px-5 md:px-20 lg:px-[calc(50%-550px)]">
       <Hero
         title="App Updates"
         description="You can see the 20 most recent posts on new features and changes we're adding to MacWeb apps here!"
       />
-      <div className="flex justify-center gap-7 flex-wrap px-25">
+      <div className="flex justify-center gap-7 flex-wrap">
         {allPosts.slice(0, 20).map((post, i) => {
           return (
             <PostCard

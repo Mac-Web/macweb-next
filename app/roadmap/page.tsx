@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <div>
+    <div className="px-5 md:px-20 lg:px-[calc(50%-550px)]">
       <Hero
         title="Roadmap"
         description="Check out MacWeb's future plans here! Our mission is to fulfill everyone's productivity and entertainment needs with our powerful apps."

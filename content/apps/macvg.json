@@ -234,7 +234,7 @@
             "title": "MacVG Version 2.0 January Update",
             "sidetitle": "January Update",
             "slug": "january-update",
-            "date": "2024-01-01",
+            "date": "2024-01-02",
             "author": "Tony",
             "content": {
                 "description": "Happy New Year! New Year is the new beginning of everything. It's the start of an awesome year 2024, the beginning of a new change, and also, the new beginning of MacVG. Because it's the New Year, MacVG is now updated to version 2.0! A brand new and revamped version of MacVG is here with the massive January Update. From a brand new look for each game page, to new tabs, features, and more, this update is the most exiciting to share with you so far, so let's see what's new with the New Year!",
@@ -819,6 +819,53 @@
                     "Me Tab",
                     "New Games",
                     "Quality of Life Changes",
+                    "Others"
+                ]
+            }
+        },
+        {
+            "id": 57,
+            "category": "Update",
+            "app": "MacVG",
+            "title": "Introducing: MacVG 2.0",
+            "sidetitle": "Summer Update",
+            "slug": "summer-update",
+            "date": "2025-08-01",
+            "author": "Tony",
+            "content": {
+                "description": "We've said this so many times, but I promise this is the last \"MacVG's biggest update ever!!!\" update. We've completely rewritten the code behind MacVG with a brand new modern technology to massively enhance the interactivity, features, and performance of MacVG. We also released 6 or 7 new games and features with this update, so let's welcome the Summer update!",
+                "paragraphs": [
+                    {
+                        "title": "MacVG Reengineered",
+                        "content": "We've rebuilt every bit of MacVG from the ground up with the modern JavaScript library React instead of vanilla plain JavaScript to massively improve the app's interactivity and performance so your gaming experience on MacVG can be smoother than ever. Because React is so scalable and flexible, we won't have to fundamentally change how MacVG works again, which means no more \"biggest update ever!\". This also changes the structure of the files and data and how everything's rendered, so a lot of bugs are also removed. React is built for app interactivity, so all the features on MacVG such as search, sort, favorite, etc will be faster and smoother than ever. This change also makes the development of the app more manageble and improves the scalability of the code, which means we can push out updates with more features and consistency in the future! Changing to a different programming language also unlocks a bunch of new features for us, such as adding subtle animations across MacVG so your gaming experience is more interactive 🔥!"
+                    },
+                    {
+                        "title": "MacVG Redesigned",
+                        "content": "Because we were already redeveloping the app from scratch, we used the freedom to do whatever we wanted with the app to also completely redesign MacVG's user interface so it's easier to use and look more visually appealing and modern. Every page across the platform is now darker, sleeker, and more consistent with other elements on the page! Better colors, spacing, layout, and typography will ensure you get the best experience using the platform and navigating between games! We've removed the side navigation panel on game pages in favor of the new navigaiton bar on the top to fit more links along with a new powerful universal search bar. Not only that, we redesigned MacVG's logo as well to honor this version 2.0 milestone. We removed the white hexagon from the logo so it's just a simple orange rounded square with a controller 🖌️!"
+                    },
+                    {
+                        "title": "New Features",
+                        "content": "We're aiming to make all MacWeb apps consitent, which not only incldues the overall design, but also the page elements and features. We revamped all the outdated game buttons (favorite, share, download, report, full screen) so they work more seamlessly and fit with the new design better! We've introduced a new navigation bar and a new footer across MacWeb apps with the transition to using React, and that includes MacVG too. You can now toggle the site between light and dark modes directly with the sun icon on the top right to customize the site to fit your likings better! This makes the site more accessible because everyone has different preferences and we're working hard to satisfy everyone's needs at once. You can also click on the GitHub icon next to the light mode toggle to view MacVG's source code, and you're more than welcome to contribute either by submitting an issue or a pull request! We've also made the site's navigation more accessible to everyone by putting MacVG tabs, information links, other MacWeb apps, our social links, and credits to the new footer at the bottom of every page 💡!"
+                    },
+                    {
+                        "title": "Revamped Tabs",
+                        "content": "We updated each MacVG tab's content with new games and information, as well as changing the Settings menu. Because we've done so much in this update (bro, we rebuilt an entire app from scratch in less than a month) we couldn't recode all the setting options from the old MacVG with React, so we permanantly removed cloaker presets and themes, and temporarily removed custom theme (stay tuned, it'll return soon!). We added a new themes dropdown menu with 4 brand new themes that look super clean and pleasant, and they work across the entire app. You can now customize the cloaker completely with a custom name and a custom tab icon. All the other features have been recoded, so don't worry 🏗️!"
+                    }
+                ],
+                "others": [
+                    "Added release sorting option.",
+                    "Updated app icons and logos.",
+                    "Improved routing and URL paths.",
+                    "Fixed deployment issues.",
+                    "Fixed analytics tracking.",
+                    "Fixed bugs.",
+                    "Added more ads (shhhh...)."
+                ],
+                "menulinks": [
+                    "MacVG Reengineered",
+                    "MacVG Redesigned",
+                    "New Features",
+                    "Revamped Tabs",
                     "Others"
                 ]
             }

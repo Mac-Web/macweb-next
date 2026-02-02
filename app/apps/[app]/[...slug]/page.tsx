@@ -9,8 +9,6 @@ import PostCard from "@/components/ui/PostCard";
 const apps: Record<string, string> = { macvg: "MacVG", maclearn: "MacLearn", macweb: "MacWeb" };
 const categories: Record<string, string> = { updates: "Update", tips: "Tip" };
 
-//TODO: finish adding all macvg and other apps' posts to the json files there not complete
-
 export async function generateMetadata({ params }: { params: { app: string; slug: string[] } }) {
   const { app, slug } = await params;
   if (apps[app] && categories[slug[0]]) {

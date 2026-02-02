@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+//TODO: move this and nav bar to layout components folder and responsive design
+
 function Footer() {
   return (
     <footer className="border-t border-gray-700 py-12 px-5 md:px-20 lg:px-[calc(50%-550px)]  flex flex-wrap md:flex-nowrap gap-y-15 justify-between items-start gap-x-15 text-sm">

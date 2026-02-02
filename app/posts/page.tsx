@@ -1,7 +1,28 @@
 import type { AppType } from "@/types/App";
+import type { Metadata } from "next";
 import postsData from "@/content/posts.json";
 import Hero from "@/components/layout/Hero";
 import PostCard from "@/components/ui/PostCard";
+
+export const metadata: Metadata = {
+  title: "Posts | MacWeb",
+  description: "You can find posts for tips and ideas about our apps or just about anything else here!",
+  authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+  openGraph: {
+    title: "Posts | MacWeb",
+    description: "You can find posts for tips and ideas about our apps or just about anything else here!",
+    url: "https://macweb.app/posts",
+    siteName: "MacWeb",
+    images: [
+      {
+        url: "/logo.png",
+        width: 100,
+        height: 100,
+      },
+    ],
+    type: "website",
+  },
+};
 
 const posts = postsData as AppType;
 

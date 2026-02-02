@@ -6,6 +6,34 @@ import Sidebar from "@/components/layout/Sidebar";
 
 const posts = postsData as AppType;
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
+  const articleData = posts.posts.find((post) => post.slug === slug);
+  if (articleData) {
+    const title = `${articleData.title} | Posts | MacWeb`;
+    const description = articleData.content.description.slice(0, 100);
+    return {
+      title,
+      description,
+      authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+      openGraph: {
+        title,
+        description,
+        url: `https://macweb.app/posts/${slug}`,
+        siteName: "MacWeb",
+        images: [
+          {
+            url: "/logo.png",
+            width: 100,
+            height: 100,
+          },
+        ],
+        type: "website",
+      },
+    };
+  }
+}
+
 async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const articleData = posts.posts.find((post) => post.slug === slug);

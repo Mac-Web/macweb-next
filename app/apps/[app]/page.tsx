@@ -6,16 +6,43 @@ import Hero from "@/components/layout/Hero";
 import PostCard from "@/components/ui/PostCard";
 import Link from "next/link";
 
-//TODO: add not found 404 page
-
 const apps = ["macvg", "maclearn", "macweb"];
 
-async function Page({ params }: { params: { app: string } }) {
-  const { app } = await params;
+async function getAppData(app: string): Promise<AppType> {
   if (!apps.includes(app)) notFound();
   const filePath = path.join(process.cwd(), "content", "apps", `${app}.json`);
   const fileContent = await fs.readFile(filePath, "utf8");
-  const appData = JSON.parse(fileContent) as AppType;
+  return JSON.parse(fileContent) as AppType;
+}
+
+export async function generateMetadata({ params }: { params: { app: string } }) {
+  const { app } = await params;
+  const appData = await getAppData(app);
+  const title = `About ${appData.name} | MacWeb`;
+  return {
+    title,
+    description: appData.description,
+    authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+    openGraph: {
+      title,
+      description: appData.description,
+      url: `https://macweb.app/${app}`,
+      siteName: "MacWeb",
+      images: [
+        {
+          url: "/logo.png",
+          width: 100,
+          height: 100,
+        },
+      ],
+      type: "website",
+    },
+  };
+}
+
+async function Page({ params }: { params: { app: string } }) {
+  const { app } = await params;
+  const appData = await getAppData(app);
   const appTips = appData.posts.filter((post) => post.category === "Tip");
   const appUpdates = appData.posts.filter((post) => post.category === "Update");
 

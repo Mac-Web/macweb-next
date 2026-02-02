@@ -1,9 +1,30 @@
 import type { AppType } from "@/types/App";
+import type { Metadata } from "next";
 import macvgPosts from "@/content/apps/macvg.json";
 import maclearnPosts from "@/content/apps/maclearn.json";
 import macwebPosts from "@/content/apps/macweb.json";
 import Hero from "@/components/layout/Hero";
 import PostCard from "@/components/ui/PostCard";
+
+export const metadata: Metadata = {
+  title: "Updates | MacWeb",
+  description: "You can see the 20 most recent posts on new features and changes we're adding to MacWeb apps here!",
+  authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+  openGraph: {
+    title: "Updates | MacWeb",
+    description: "You can see the 20 most recent posts on new features and changes we're adding to MacWeb apps here!",
+    url: "https://macweb.app/updates",
+    siteName: "MacWeb",
+    images: [
+      {
+        url: "/logo.png",
+        width: 100,
+        height: 100,
+      },
+    ],
+    type: "website",
+  },
+};
 
 const macvgData = macvgPosts as AppType;
 const maclearnData = maclearnPosts as AppType;

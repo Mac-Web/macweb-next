@@ -9,6 +9,61 @@ import PostCard from "@/components/ui/PostCard";
 const apps: Record<string, string> = { macvg: "MacVG", maclearn: "MacLearn", macweb: "MacWeb" };
 const categories: Record<string, string> = { updates: "Update", tips: "Tip" };
 
+//TODO: finish adding all macvg and other apps' posts to the json files there not complete
+
+export async function generateMetadata({ params }: { params: { app: string; slug: string[] } }) {
+  const { app, slug } = await params;
+  if (apps[app] && categories[slug[0]]) {
+    const filePath = path.join(process.cwd(), "content", "apps", `${app}.json`);
+    const fileContent = await fs.readFile(filePath, "utf8");
+    const appData = JSON.parse(fileContent) as AppType;
+    const articleData = appData.posts.find((post) => post.slug === slug[1])!;
+    if (articleData && slug.length === 2) {
+      const title = `${articleData.title} | ${apps[app]} ${categories[slug[0]]}s | MacWeb`;
+      return {
+        title,
+        description: articleData.content.description.slice(0, 100),
+        authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+        openGraph: {
+          title,
+          description: articleData.content.description.slice(0, 100),
+          url: `https://macweb.app/apps/${app}/${slug[0]}/${slug[1]}`,
+          siteName: "MacWeb",
+          images: [
+            {
+              url: "/logo.png",
+              width: 100,
+              height: 100,
+            },
+          ],
+          type: "website",
+        },
+      };
+    } else {
+      const title = `${apps[app]} ${categories[slug[0]]}s | MacWeb`;
+      return {
+        title,
+        description: `Check out every ${apps[app]} ${categories[slug[0]].toLowerCase()} here!`,
+        authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+        openGraph: {
+          title,
+          description: `Check out every ${apps[app]} ${categories[slug[0]].toLowerCase()} here!`,
+          url: `https://macweb.app/apps/${app}/${slug[0]}`,
+          siteName: "MacWeb",
+          images: [
+            {
+              url: "/logo.png",
+              width: 100,
+              height: 100,
+            },
+          ],
+          type: "website",
+        },
+      };
+    }
+  }
+}
+
 async function Page({ params }: { params: { app: string; slug: string[] } }) {
   const { app, slug } = await params;
   if (!apps[app] || !categories[slug[0]] || slug.length > 2) notFound();
@@ -79,7 +134,7 @@ async function Page({ params }: { params: { app: string; slug: string[] } }) {
     <div>
       <Hero
         title={apps[app] + " " + slug[0][0].toUpperCase() + slug[0].slice(1)}
-        description={`Check out every ${apps[app]} update here!`}
+        description={`Check out every ${apps[app]} ${categories[slug[0]].toLowerCase()} here!`}
       />
       <div className="flex justify-center gap-7 flex-wrap px-25 py-10">
         {sortedPosts.map((post) => (

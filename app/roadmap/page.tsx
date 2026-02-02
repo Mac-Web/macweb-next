@@ -1,13 +1,35 @@
+import type { Metadata } from "next";
 import Hero from "@/components/layout/Hero";
 import Section from "./Section";
+
+export const metadata: Metadata = {
+  title: "Roadmap | MacWeb",
+  description:
+    "Check out MacWeb's future plans here! Our mission is to fulfill everyone's productivity and entertainment needs with our powerful apps.",
+  authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+  openGraph: {
+    title: "Roadmap | MacWeb",
+    description:
+      "Check out MacWeb's future plans here! Our mission is to fulfill everyone's productivity and entertainment needs with our powerful apps.",
+    url: "https://macweb.app/roadmap",
+    siteName: "MacWeb",
+    images: [
+      {
+        url: "/logo.png",
+        width: 100,
+        height: 100,
+      },
+    ],
+    type: "website",
+  },
+};
 
 function Page() {
   return (
     <div>
       <Hero
         title="Roadmap"
-        description="Our mission is to fulfill everyone's productivity and
-            entertainment needs with our powerful apps."
+        description="Check out MacWeb's future plans here! Our mission is to fulfill everyone's productivity and entertainment needs with our powerful apps."
       />
       <div className="flex flex-col gap-y-7 items-center pb-12">
         <Section

@@ -13,6 +13,21 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "My Profile | MacWeb",
   description: "Customize your own profile with a custom display name, profile image, about, and more!",
+  authors: [{ name: "MacWeb", url: "https://macweb.app" }],
+  openGraph: {
+    title: "My Profile | MacWeb",
+    description: "Customize your own profile with a custom display name, profile image, about, and more!",
+    url: "https://macweb.app/profile",
+    siteName: "MacWeb",
+    images: [
+      {
+        url: "/logo.png",
+        width: 100,
+        height: 100,
+      },
+    ],
+    type: "website",
+  },
 };
 
 async function Page() {

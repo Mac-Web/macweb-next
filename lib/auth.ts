@@ -2,10 +2,9 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./prisma";
 
-const root = process.env.NEXT_PUBLIC_ROOT_URL as string;
+const root = process.env.NEXT_PUBLIC_ROOT_DOMAIN as string;
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL,
   database: prismaAdapter(prisma, { provider: "postgresql" }),
   emailAndPassword: { enabled: true },
   socialProviders: {
@@ -25,12 +24,15 @@ export const auth = betterAuth({
   advanced: {
     crossSubDomainCookies: {
       enabled: true,
-      domain: `.${root}`,
+      domain: root,
     },
-    defaultCookieAttributes: {
-      sameSite: "none",
-      secure: true,
-      partitioned: true,
+    cookies: {
+      state: {
+        attributes: {
+          sameSite: "none",
+          secure: true,
+        },
+      },
     },
   },
   trustedOrigins: [

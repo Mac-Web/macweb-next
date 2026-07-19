@@ -19,4 +19,23 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     }, //TODO: add facebook oauth
   },
+  advanced: {
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: "macweb.app",
+    },
+    cookies: {
+      state: {
+        attributes: {
+          sameSite: "none",
+          secure: true,
+        },
+      },
+    },
+  },
+  trustedOrigins: [
+    "https://macweb.app",
+    "https://macvg.macweb.app",
+    "https://maclearn.macweb.app",
+  ],
 });

@@ -54,7 +54,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       {
         onSuccess: () => {
           if (redirect) {
-            window.open(`https://${redirect}.macweb.app`);
+            window.open(`http://${redirect}.macweb.app`, "_self");
           } else {
             window.location.reload();
           }
@@ -76,7 +76,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       {
         onSuccess: () => {
           if (redirect) {
-            window.open(`https://${redirect}.macweb.app`);
+            window.open(`https://${redirect}.macweb.app`, "_self");
           } else {
             window.location.reload();
           }

@@ -2,6 +2,8 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./prisma";
 
+const root = process.env.NEXT_PUBLIC_ROOT_URL as string;
+
 export const auth = betterAuth({
   database: prismaAdapter(prisma, { provider: "postgresql" }),
   emailAndPassword: { enabled: true },
@@ -22,7 +24,7 @@ export const auth = betterAuth({
   advanced: {
     crossSubDomainCookies: {
       enabled: true,
-      domain: "macweb.app",
+      domain: root,
     },
     cookies: {
       state: {
@@ -34,8 +36,8 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-    "https://macweb.app",
-    "https://macvg.macweb.app",
-    "https://maclearn.macweb.app",
+    `http://${root}`, //TODO: http vs https for local vs prod
+    `http://macvg.${root}`,
+    `http://maclearn.${root}`,
   ],
 });

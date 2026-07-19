@@ -36,8 +36,9 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-    `http://${root}`, //TODO: http vs https for local vs prod
-    `http://macvg.${root}`,
-    `http://maclearn.${root}`,
+    `http${process.env.NODE_ENV === "development" ? "" : "s"}://${root}`,
+    `http${process.env.NODE_ENV === "development" ? "" : "s"}://macvg.${root}`,
+    `http${process.env.NODE_ENV === "development" ? "" : "s"}://maclearn.${root}`,
+    `http${process.env.NODE_ENV === "development" ? "" : "s"}://macforms.${root}`,
   ],
 });

@@ -49,11 +49,15 @@ function SigninModal({ close, redirect }: SigninModalProps) {
     e.preventDefault();
     setError(null);
     setLoading(true);
-    await authClient.signUp.email(
+    await authClient["signUp"].email(
       { ...credentials },
       {
         onSuccess: () => {
-          window.location.reload(); //TODO: redirect to correct subapp
+          if (redirect) {
+            window.open(`https://${redirect}.macweb.app`);
+          } else {
+            window.location.reload();
+          }
         },
         onError: (ctx) => {
           setError(ctx.error.message);
@@ -71,7 +75,11 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       { ...credentials },
       {
         onSuccess: () => {
-          window.location.reload(); //TODO: redirect to correct subapp
+          if (redirect) {
+            window.open(`https://${redirect}.macweb.app`);
+          } else {
+            window.location.reload();
+          }
         },
         onError: (ctx) => {
           setError(ctx.error.message);
@@ -80,11 +88,13 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       },
     );
   }
-  //TODO: merge handlesignin and handlesignup into one function cuz most of the logic is same
 
   async function handleOAuthSignin(provider: string) {
     setLoading(provider);
-    await authClient.signIn.social({ provider, callbackURL: "/profile" }); //TODO: make redirect to subapp work here too
+    await authClient.signIn.social({
+      provider,
+      callbackURL: redirect ? `https://${redirect}.macweb.app` : "/profile",
+    });
   }
 
   return (

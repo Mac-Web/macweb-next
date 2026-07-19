@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const oAuthProviders = ["google", "discord", "facebook", "github"];
@@ -29,7 +28,6 @@ function SigninModal({ close, redirect }: SigninModalProps) {
   const [error, setError] = useState<string | null>(null);
   const [signUp, setSignUp] = useState<boolean>(false);
   const modalBgRef = useRef<HTMLDivElement | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     const clickListener = (e: Event) => {
@@ -93,20 +91,14 @@ function SigninModal({ close, redirect }: SigninModalProps) {
 
   async function handleOAuthSignin(provider: string) {
     setLoading(provider);
-    await authClient.signIn.social(
-      {
-        provider,
-      },
-      {
-        onSuccess: () => {
-          if (redirect) {
-            window.open(`https://${redirect}.macweb.app`, "_self");
-          } else {
-            router.push("/profile");
-          }
-        },
-      },
-    );
+    const targetRedirect = redirect
+      ? `https://${redirect}.macweb.app`
+      : "https://macweb.app/profile";
+    await authClient.signIn.social({
+      provider,
+      callbackURL: targetRedirect,
+      errorCallbackURL: targetRedirect,
+    });
   }
 
   return (

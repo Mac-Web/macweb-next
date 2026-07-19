@@ -1,24 +1,24 @@
 "use client";
 
+import type { User } from "@/generated/prisma/client";
 import { useState } from "react";
-import { UserType } from "@/types/User";
 import { updateAbout } from "./actions";
 import { FaCircleInfo } from "react-icons/fa6";
 
 type AboutProps = {
-  existingUser: UserType;
+  existingUser: User;
   viewer?: boolean;
 };
 
 function About({ existingUser, viewer }: AboutProps) {
   const [editing, setEditing] = useState<boolean>(false);
   const [text, setText] = useState<string>(existingUser?.about || "");
-  const [localUser, setLocalUser] = useState<UserType>({ ...existingUser });
+  const [localUser, setLocalUser] = useState<User>({ ...existingUser });
 
   async function handleEdit() {
     if (existingUser) {
       if (editing) {
-        await updateAbout(existingUser._id, text);
+        await updateAbout(existingUser.id, text);
         setLocalUser({ ...localUser, about: text });
         setEditing(false);
       } else {
@@ -40,7 +40,9 @@ function About({ existingUser, viewer }: AboutProps) {
           onChange={(e) => setText(e.target.value)}
         ></textarea>
       ) : (
-        <p className="text-gray-800 dark:text-gray-100">{localUser.about || "No about information added"}</p>
+        <p className="text-gray-800 dark:text-gray-100">
+          {localUser.about || "No about information added"}
+        </p>
       )}
       <div className="flex gap-x-3">
         {!viewer && (

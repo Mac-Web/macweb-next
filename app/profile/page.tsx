@@ -1,22 +1,23 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-import { dbConnect } from "@/lib/db";
-import { User } from "@/models/User";
+import type { Metadata } from "next";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { prisma } from "@/lib/prisma";
 import { FaTrophy } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { MdArticle } from "react-icons/md";
 import About from "./About";
 import Profile from "./Profile";
 import SigninBtn from "@/components/SigninBtn";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "My Profile | MacWeb",
-  description: "Customize your own profile with a custom display name, profile image, about, and more!",
+  description:
+    "Customize your own profile with a custom display name, profile image, about, and more!",
   authors: [{ name: "MacWeb", url: "https://macweb.app" }],
   openGraph: {
     title: "My Profile | MacWeb",
-    description: "Customize your own profile with a custom display name, profile image, about, and more!",
+    description:
+      "Customize your own profile with a custom display name, profile image, about, and more!",
     url: "https://macweb.app/profile",
     siteName: "MacWeb",
     images: [
@@ -31,18 +32,18 @@ export const metadata: Metadata = {
 };
 
 async function Page() {
-  const session = await getServerSession(authOptions);
-  await dbConnect();
-  const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
-  const existingUser = JSON.parse(JSON.stringify(res));
+  const session = await auth.api.getSession({ headers: await headers() });
+  const user = session
+    ? await prisma.user.findUnique({ where: { id: session.user.id } })
+    : null;
 
   return (
     <div className="flex flex-col sm:flex-row py-5 px-5 md:px-20 lg:px-[calc(50%-550px)] gap-5">
-      {session?.user ? (
+      {user ? (
         <>
-          <Profile existingUser={existingUser} />
+          <Profile existingUser={user} />
           <div className="flex-1 flex flex-col gap-y-5">
-            <About existingUser={existingUser} />
+            <About existingUser={user} />
             {/* <div className="profile-section">
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
@@ -65,7 +66,9 @@ async function Page() {
         </>
       ) : (
         <div className="flex flex-col gap-y-10 items-center justify-center w-full h-30 md:h-100">
-          <h2 className="text-black dark:text-white text-xl font-bold">Sign in to access user profile</h2>
+          <h2 className="text-black dark:text-white text-xl font-bold">
+            Sign in to access user profile
+          </h2>
           <SigninBtn />
         </div>
       )}

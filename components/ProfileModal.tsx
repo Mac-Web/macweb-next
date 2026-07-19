@@ -1,19 +1,24 @@
 "use client";
 
+import type { User } from "@/generated/prisma/client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { updateProfilePicture } from "@/app/profile/actions";
-import { UserType } from "@/types/User";
+import Image from "next/image";
 
 type ProfileModalProps = {
-  existingUser: UserType;
+  existingUser: User;
   close: () => void;
   icons: string[];
   setSelectedIcon: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function ProfileModal({ existingUser, close, icons, setSelectedIcon }: ProfileModalProps) {
+function ProfileModal({
+  existingUser,
+  close,
+  icons,
+  setSelectedIcon,
+}: ProfileModalProps) {
   const [selected, setSelected] = useState<number>(existingUser.picture || 0);
   const modalBgRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,7 +35,7 @@ function ProfileModal({ existingUser, close, icons, setSelectedIcon }: ProfileMo
   });
 
   async function handleSave() {
-    await updateProfilePicture(existingUser._id, selected);
+    await updateProfilePicture(existingUser.id, selected);
     setSelectedIcon(selected);
     close();
   }
@@ -49,7 +54,9 @@ function ProfileModal({ existingUser, close, icons, setSelectedIcon }: ProfileMo
         exit={{ scale: 0 }}
         className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-5 items-center pt-3 p-10 w-[90vw] sm:w-[80vw] md:w-100 relative max-h-[95vh] overflow-auto"
       >
-        <h2 className="text-2xl font-bold text-black dark:text-white text-center">Edit Profile Picture</h2>
+        <h2 className="text-2xl font-bold text-black dark:text-white text-center">
+          Edit Profile Picture
+        </h2>
         <div className="flex flex-wrap justify-between gap-3 w-full">
           {icons.map((icon: string, i: number) => {
             const name = icon[0].toUpperCase() + icon.slice(1);

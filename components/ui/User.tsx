@@ -1,11 +1,11 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import SigninBtn from "../SigninBtn";
 import NavUser from "./NavUser";
 import NavIcon from "./NavIcon";
 
 async function User() {
-  const session = await getServerSession(authOptions);
+  const session = await auth.api.getSession({ headers: await headers() });
 
   if (!session) {
     return <SigninBtn />;

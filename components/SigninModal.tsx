@@ -1,10 +1,8 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import { useState, useEffect, useRef, FormEvent } from "react";
-import { userSignUp } from "./actions";
-import { CredentialsType } from "@/types/User";
 import { motion } from "framer-motion";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 
 const oAuthProviders = ["google", "discord", "facebook", "github"];
@@ -14,10 +12,20 @@ type SigninModalProps = {
   redirect?: string | null;
 };
 
+interface CredentialsType {
+  email: string;
+  name: string;
+  password: string;
+}
+
 function SigninModal({ close, redirect }: SigninModalProps) {
-  const [credentials, setCredentials] = useState<CredentialsType>({ username: "", display: "", password: "" });
+  const [credentials, setCredentials] = useState<CredentialsType>({
+    email: "",
+    name: "",
+    password: "",
+  });
   const [loading, setLoading] = useState<string | boolean>(false);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const [signUp, setSignUp] = useState<boolean>(false);
   const modalBgRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,57 +42,49 @@ function SigninModal({ close, redirect }: SigninModalProps) {
   });
 
   useEffect(() => {
-    setError(false);
+    setError(null);
   }, [signUp]);
 
   async function handleSignUp(e: FormEvent) {
     e.preventDefault();
-    setError(false);
+    setError(null);
     setLoading(true);
-    const res = await userSignUp(credentials);
-    if (res?.error) {
-      setError(true);
-      setLoading(false);
-    } else {
-      const signInRes = await signIn("credentials", {
-        redirect: false,
-        callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
-        //TODO: make this actually work for prod
-        username: credentials.username,
-        password: credentials.password,
-      });
-      if (signInRes?.error) {
-        setError(true);
-      } else {
-        window.location.href = signInRes?.url || "";
-      }
-    }
+    await authClient.signUp.email(
+      { ...credentials },
+      {
+        onSuccess: () => {
+          window.location.reload(); //TODO: redirect to correct subapp
+        },
+        onError: (ctx) => {
+          setError(ctx.error.message);
+          setLoading(false);
+        },
+      },
+    );
   }
 
   async function handleSignIn(e: FormEvent) {
     e.preventDefault();
-    setError(false);
+    setError(null);
     setLoading(true);
-    const res = await signIn("credentials", {
-      redirect: false,
-      callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
-      username: credentials.username,
-      password: credentials.password,
-    });
-    setLoading(false);
-    if (res?.error) {
-      setError(true);
-    } else {
-      window.location.href = res?.url || "";
-    }
+    await authClient.signIn.email(
+      { ...credentials },
+      {
+        onSuccess: () => {
+          window.location.reload(); //TODO: redirect to correct subapp
+        },
+        onError: (ctx) => {
+          setError(ctx.error.message);
+          setLoading(false);
+        },
+      },
+    );
   }
   //TODO: merge handlesignin and handlesignup into one function cuz most of the logic is same
 
-  function handleOAuthSignin(provider: string) {
-    signIn(provider, {
-      callbackUrl: redirect ? `http://${redirect}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}` : process.env.NEXT_PUBLIC_ROOT_URL,
-    });
+  async function handleOAuthSignin(provider: string) {
     setLoading(provider);
+    await authClient.signIn.social({ provider, callbackURL: "/profile" }); //TODO: make redirect to subapp work here too
   }
 
   return (
@@ -108,27 +108,34 @@ function SigninModal({ close, redirect }: SigninModalProps) {
         }}
         className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-2 items-center pt-3 py-8 px-10 w-[90vw] sm:w-[80vw] md:w-100 relative max-h-[95vh] overflow-auto"
       >
-        <Image src="/logo.png" alt="MacWeb Logo" width={45} height={45} className=" -top-10" />
+        <Image
+          src="/logo.png"
+          alt="MacWeb Logo"
+          width={45}
+          height={45}
+          className=" -top-10"
+        />
         <div className="w-full flex flex-col items-center gap-y-5">
-          <h2 className="text-2xl text-black dark:text-white font-bold">Sign {signUp ? "up for" : "in to"} MacWeb</h2>
+          <h2 className="text-2xl text-black dark:text-white font-bold">
+            Sign {signUp ? "up for" : "in to"} MacWeb
+          </h2>
           <div className="flex flex-col gap-y-2 w-full">
-            {error && (
-              <div className="text-red-600 w-full">
-                {signUp ? "That username is in use" : "Login failed, check your credentials"}
-                {/*TODO: make error message smarter and more accurate*/}
-              </div>
-            )}
+            {error && <div className="text-red-600 w-full">{error}</div>}
             <input
-              value={credentials.username}
-              onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+              value={credentials.email}
+              onChange={(e) =>
+                setCredentials({ ...credentials, email: e.target.value })
+              }
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               className="modal-input"
             />
             {signUp && (
               <input
-                value={credentials.display}
-                onChange={(e) => setCredentials({ ...credentials, display: e.target.value })}
+                value={credentials.name}
+                onChange={(e) =>
+                  setCredentials({ ...credentials, name: e.target.value })
+                }
                 type="text"
                 placeholder="Display name"
                 className="modal-input"
@@ -136,7 +143,9 @@ function SigninModal({ close, redirect }: SigninModalProps) {
             )}
             <input
               value={credentials.password}
-              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
               type="password"
               placeholder="Password"
               className="modal-input"
@@ -150,14 +159,20 @@ function SigninModal({ close, redirect }: SigninModalProps) {
             {signUp ? (
               <div className="text-sm text-gray-800 dark:text-gray-300 w-full">
                 Already have an account?{" "}
-                <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(false)}>
+                <span
+                  className="text-blue-600 cursor-pointer hover:underline"
+                  onClick={() => setSignUp(false)}
+                >
                   Sign in
                 </span>
               </div>
             ) : (
               <div className="text-sm text-gray-800 dark:text-gray-300 w-full">
                 Don&apos;t have an account yet?{" "}
-                <span className="text-blue-600 cursor-pointer hover:underline" onClick={() => setSignUp(true)}>
+                <span
+                  className="text-blue-600 cursor-pointer hover:underline"
+                  onClick={() => setSignUp(true)}
+                >
                   Sign up
                 </span>
               </div>
@@ -172,7 +187,12 @@ function SigninModal({ close, redirect }: SigninModalProps) {
             {oAuthProviders.map((provider: string, i: number) => {
               const capitalized = provider[0].toUpperCase() + provider.slice(1);
               return (
-                <button key={i} onClick={() => handleOAuthSignin(provider)} type="button" className="oauth-btn">
+                <button
+                  key={i}
+                  onClick={() => handleOAuthSignin(provider)}
+                  type="button"
+                  className="oauth-btn"
+                >
                   <Image
                     src={`/oauth/${provider}.png`}
                     alt={`${capitalized} Logo`}
@@ -181,7 +201,9 @@ function SigninModal({ close, redirect }: SigninModalProps) {
                     height={25}
                     className={`${provider === "github" ? "invert" : ""} dark:invert-0`}
                   />
-                  {loading === provider ? "Loading..." : "Sign in with " + capitalized}
+                  {loading === provider
+                    ? "Loading..."
+                    : "Sign in with " + capitalized}
                 </button>
               );
             })}

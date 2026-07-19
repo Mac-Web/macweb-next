@@ -1,29 +1,17 @@
 "use client";
 
-import { UserType } from "@/types/User";
-import { getSession } from "next-auth/react";
+import type { User } from "better-auth";
 import { deleteAccount } from "./actions";
-import { signOut } from "next-auth/react";
 
-type SessionUserType = {
-  name?: string;
-  email?: string;
-  image?: string;
-  id: string;
-};
-
-function DeleteBtn({ existingUser }: { existingUser: UserType }) {
+function DeleteBtn({ existingUser }: { existingUser: User }) {
   async function handleDelete() {
     if (
       confirm(
-        existingUser?.display +
-          ", are you sure you want to permanently delete your MacWeb account? This will wipe all your data from all of our apps. This action cannot be undone."
+        existingUser?.name +
+          ", are you sure you want to permanently delete your MacWeb account? This will wipe all your data from all of our apps. This action cannot be undone.",
       )
     ) {
-      const session = await getSession();
-      const sessionUser = session?.user as SessionUserType;
-      await deleteAccount(existingUser._id, sessionUser?.id);
-      signOut();
+      await deleteAccount(existingUser.id);
     }
   }
 

@@ -1,20 +1,31 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-import { dbConnect } from "@/lib/db";
-import { User } from "@/models/User";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { prisma } from "@/lib/prisma";
 import Image from "next/image";
 
-const icons: string[] = ["user", "cat", "crine", "dog", "knight", "poop", "robot", "skull", "github"];
+const icons: string[] = [
+  "user",
+  "cat",
+  "crine",
+  "dog",
+  "knight",
+  "poop",
+  "robot",
+  "skull",
+  "github",
+];
 
 async function NavIcon() {
-  const session = await getServerSession(authOptions);
-  await dbConnect();
-  const res = await User.findOne({ username: session?.user?.email ? session.user.email : session?.user?.name }).lean();
-  const existingUser = JSON.parse(JSON.stringify(res));
+  const session = await auth.api.getSession({ headers: await headers() });
+  const existingUser = await prisma.user.findUnique({
+    where: { id: session!.user.id },
+  });
 
   return (
     <Image
-      src={`/icons/${icons[existingUser.picture || 0]}.svg`}
+      src={
+        session?.user.image || `/icons/${icons[existingUser?.picture || 0]}.svg`
+      }
       alt="Avatar"
       title="Avatar"
       className="invert dark:invert-0 border-2 border-gray-500 dark:border-gray-700 rounded-full"

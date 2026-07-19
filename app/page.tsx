@@ -1,19 +1,23 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import SigninBtn from "@/components/SigninBtn";
 import Card from "@/components/Card";
 import Section from "@/components/ui/Section";
 import Latest from "./Latest";
 
 export default async function Page() {
-  const session = await getServerSession(authOptions);
+  const session = await auth.api.getSession({ headers: await headers() });
 
   return (
     <div>
       <div className="flex items-center justify-center flex-col gap-y-7 py-10">
-        <h1 className="text-black dark:text-white text-4xl font-bold text-center">Welcome to MacWeb!</h1>
+        <h1 className="text-black dark:text-white text-4xl font-bold text-center">
+          Welcome to MacWeb!
+        </h1>
         {!session && <SigninBtn />}
-        <p className="text-gray-800 dark:text-gray-100 text-lg text-center w-[65%]">Select an app below to get started.</p>
+        <p className="text-gray-800 dark:text-gray-100 text-lg text-center w-[65%]">
+          Select an app below to get started.
+        </p>
         <div className="flex justify-center gap-7 flex-wrap px-5 lg:px-25">
           <Card name="MacVG" src="/logos/macvg.png" />
           <Card name="MacLearn" src="/logos/maclearn.png" />

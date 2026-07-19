@@ -1,21 +1,18 @@
-import type { UserType } from "@/types/User";
-import { dbConnect } from "@/lib/db";
-import { User } from "@/models/User";
+import { prisma } from "@/lib/prisma";
+import { notFound, redirect } from "next/navigation";
 import { FaTrophy } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { MdArticle } from "react-icons/md";
-import { notFound } from "next/navigation";
 import About from "../About";
 import Profile from "../Profile";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { id } = await params;
-  await dbConnect();
-  const res = await User.findById(id).lean();
-  const existingUser: UserType = JSON.parse(JSON.stringify(res));
+  const existingUser = await prisma.user.findUnique({ where: { id } });
+
   if (existingUser) {
-    const title = `${existingUser.display || existingUser.username}'s Profile | MacWeb`;
-    const description = `View ${existingUser.display || existingUser.username}'s MacWeb profile, including their about, achievements, favorited games/articles, and more!`;
+    const title = `${existingUser.name}'s Profile | MacWeb`;
+    const description = `View ${existingUser.name}'s MacWeb profile, including their about, achievements, favorited games/articles, and more!`;
     return {
       title,
       description,
@@ -42,18 +39,15 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 async function Page({ params }: { params: { id: string } }) {
   const { id } = await params;
-  await dbConnect();
-  const res = await User.findById(id).lean();
-  const existingUser = JSON.parse(JSON.stringify(res));
+  const existingUser = await prisma.user.findUnique({ where: { id } });
+  if (!existingUser) redirect("/");
 
   return (
     <div className="flex flex-col sm:flex-row py-5 px-5 md:px-20 lg:px-[calc(50%-550px)] gap-5">
-      {existingUser ? (
-        <>
-          <Profile existingUser={existingUser} viewer={true} />
-          <div className="flex-1 flex flex-col gap-y-5">
-            <About existingUser={existingUser} viewer={true} />
-            {/* <div className="profile-section">
+      <Profile existingUser={existingUser} viewer={true} />
+      <div className="flex-1 flex flex-col gap-y-5">
+        <About existingUser={existingUser} viewer={true} />
+        {/* <div className="profile-section">
               <h2 className="profile-header">
                 <FaTrophy size={25} /> Achievements
               </h2>
@@ -71,11 +65,7 @@ async function Page({ params }: { params: { id: string } }) {
               </h2>
               <p className="text-gray-800 dark:text-gray-100">Favorited articles coming soon!</p>
             </div> */}
-          </div>
-        </>
-      ) : (
-        <div>df</div>
-      )}
+      </div>
     </div>
   );
 }

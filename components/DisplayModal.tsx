@@ -1,18 +1,18 @@
 "use client";
 
+import type { User } from "@/generated/prisma/client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { UserType } from "@/types/User";
 import { updateDisplayName } from "@/app/profile/actions";
 
 type DisplayModalTypes = {
-  existingUser: UserType;
+  existingUser: User;
   close: () => void;
   setDisplay: React.Dispatch<React.SetStateAction<string>>;
 };
 
 function DisplayModal({ existingUser, close, setDisplay }: DisplayModalTypes) {
-  const [text, setText] = useState<string>(existingUser.display || "");
+  const [text, setText] = useState<string>(existingUser.name || "");
   const modalBgRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function DisplayModal({ existingUser, close, setDisplay }: DisplayModalTypes) {
   });
 
   async function handleSave() {
-    await updateDisplayName(existingUser._id, text);
+    await updateDisplayName(existingUser.id, text);
     setDisplay(text);
     close();
   }
@@ -47,7 +47,9 @@ function DisplayModal({ existingUser, close, setDisplay }: DisplayModalTypes) {
         exit={{ scale: 0 }}
         className="bg-gray-100 dark:bg-gray-950 rounded flex flex-col gap-y-10 items-center py-8 px-10 w-100 relative"
       >
-        <h2 className="text-2xl font-bold text-black dark:text-white text-center">Edit Display Name</h2>
+        <h2 className="text-2xl font-bold text-black dark:text-white text-center">
+          Edit Display Name
+        </h2>
         <input
           type="text"
           className="modal-input"

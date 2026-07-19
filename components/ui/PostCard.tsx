@@ -1,6 +1,5 @@
 "use client";
 
-import type { PostType } from "@/types/App";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,7 +20,10 @@ function PostCard({ img, href, title, description }: PostCardProps) {
       whileTap={{ scale: 1.02, y: -5 }}
       transition={{ duration: 0.7, type: "spring" }}
     >
-      <Link href={href} className="bg-gray-300 dark:bg-gray-900 rounded flex flex-col items-center gap-y-4 p-4 w-45 h-full group">
+      <Link
+        href={href}
+        className="bg-gray-300 dark:bg-gray-900 rounded flex flex-col items-center gap-y-4 p-4 w-45 h-full group"
+      >
         {img && (
           <Image
             src={img}
@@ -31,8 +33,12 @@ function PostCard({ img, href, title, description }: PostCardProps) {
             className=" group-hover:scale-105 transition-transform! duration-300"
           />
         )}
-        <h3 className="text-black dark:text-white font-bold text-center text-xl">{title}</h3>
-        <p className="text-gray-700 dark:text-gray-300 text-center">{description}</p>
+        <h3 className="text-black dark:text-white font-bold text-center text-xl">
+          {title}
+        </h3>
+        <p className="text-gray-700 dark:text-gray-300 text-center">
+          {description}
+        </p>
       </Link>
     </motion.div>
   );

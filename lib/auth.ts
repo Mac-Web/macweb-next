@@ -4,6 +4,7 @@ import { prisma } from "./prisma";
 
 const root = process.env.NEXT_PUBLIC_ROOT_DOMAIN as string;
 const isProd = process.env.NODE_ENV === "production";
+const subdomain = isProd ? root : root.split(":")[0] + ":3001";
 
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL as string,
@@ -40,9 +41,12 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-    `http${!isProd ? "" : "s"}://${root}`,
+    `http${!isProd ? "" : "s"}://${root}`, //macweb.com:3000
     `http${!isProd ? "" : "s"}://macvg.${root}`,
     `http${!isProd ? "" : "s"}://maclearn.${root}`,
     `http${!isProd ? "" : "s"}://macforms.${root}`,
+    `http${!isProd ? "" : "s"}://macvg.${subdomain}`, //macweb.com:3001
+    `http${!isProd ? "" : "s"}://maclearn.${subdomain}`,
+    `http${!isProd ? "" : "s"}://macforms.${subdomain}`,
   ],
 });

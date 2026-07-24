@@ -28,6 +28,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
   const [error, setError] = useState<string | null>(null);
   const [signUp, setSignUp] = useState<boolean>(false);
   const modalBgRef = useRef<HTMLDivElement | null>(null);
+  const root = process.env.NEXT_PUBLIC_ROOT_DOMAIN as string;
 
   useEffect(() => {
     const clickListener = (e: Event) => {
@@ -54,7 +55,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       {
         onSuccess: () => {
           if (redirect) {
-            window.open(`https://${redirect}.macweb.app`, "_self");
+            window.open(`http://${redirect}.${root}`, "_self");
           } else {
             window.location.reload();
           }
@@ -76,7 +77,7 @@ function SigninModal({ close, redirect }: SigninModalProps) {
       {
         onSuccess: () => {
           if (redirect) {
-            window.open(`https://${redirect}.macweb.app`, "_self");
+            window.open(`http://${redirect}.${root}`, "_self");
           } else {
             window.location.reload();
           }
@@ -92,8 +93,8 @@ function SigninModal({ close, redirect }: SigninModalProps) {
   async function handleOAuthSignin(provider: string) {
     setLoading(provider);
     const targetRedirect = redirect
-      ? `https://${redirect}.macweb.app`
-      : "https://macweb.app/profile";
+      ? `http://${redirect}.${root}`
+      : `http://${root}/profile`;
     await authClient.signIn.social({
       provider,
       callbackURL: targetRedirect,

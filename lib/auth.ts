@@ -3,8 +3,10 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./prisma";
 
 const root = process.env.NEXT_PUBLIC_ROOT_DOMAIN as string;
+const isProd = process.env.NODE_ENV === "production";
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL as string,
   database: prismaAdapter(prisma, { provider: "postgresql" }),
   emailAndPassword: { enabled: true },
   socialProviders: {
@@ -24,21 +26,23 @@ export const auth = betterAuth({
   advanced: {
     crossSubDomainCookies: {
       enabled: true,
-      domain: root,
+      domain: isProd ? root : root.split(":")[0],
     },
     cookies: {
       state: {
-        attributes: {
-          sameSite: "none",
-          secure: true,
-        },
+        attributes: isProd
+          ? {
+              sameSite: "none",
+              secure: true,
+            }
+          : undefined,
       },
     },
   },
   trustedOrigins: [
-    `http${process.env.NODE_ENV === "development" ? "" : "s"}://${root}`,
-    `http${process.env.NODE_ENV === "development" ? "" : "s"}://macvg.${root}`,
-    `http${process.env.NODE_ENV === "development" ? "" : "s"}://maclearn.${root}`,
-    `http${process.env.NODE_ENV === "development" ? "" : "s"}://macforms.${root}`,
+    `http${!isProd ? "" : "s"}://${root}`,
+    `http${!isProd ? "" : "s"}://macvg.${root}`,
+    `http${!isProd ? "" : "s"}://maclearn.${root}`,
+    `http${!isProd ? "" : "s"}://macforms.${root}`,
   ],
 });

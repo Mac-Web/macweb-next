@@ -92,9 +92,10 @@ function SigninModal({ close, redirect }: SigninModalProps) {
 
   async function handleOAuthSignin(provider: string) {
     setLoading(provider);
+    const protocol = window.location.protocol;
     const targetRedirect = redirect
-      ? `http://${redirect}.${root}`
-      : `http://${root}/profile`;
+      ? `${protocol}//${redirect}.${root}`
+      : `${protocol}//${root}/profile`;
     await authClient.signIn.social({
       provider,
       callbackURL: targetRedirect,

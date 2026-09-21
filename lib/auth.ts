@@ -45,8 +45,11 @@ export const auth = betterAuth({
     `http${!isProd ? "" : "s"}://macvg.${root}`,
     `http${!isProd ? "" : "s"}://maclearn.${root}`,
     `http${!isProd ? "" : "s"}://macforms.${root}`,
+    `http${!isProd ? "" : "s"}://macideas.${root}`,
     `http${!isProd ? "" : "s"}://macvg.${subdomain}`, //macweb.com:3001
     `http${!isProd ? "" : "s"}://maclearn.${subdomain}`,
     `http${!isProd ? "" : "s"}://macforms.${subdomain}`,
+    `http${!isProd ? "" : "s"}://macideas.${subdomain}`,
+    "https://macideas.macweb.app",
   ],
 });

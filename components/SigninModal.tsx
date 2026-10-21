@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
+import { FaUser } from "react-icons/fa";
 
 const oAuthProviders = ["google", "discord", "facebook", "github"];
 
@@ -52,6 +53,30 @@ function SigninModal({ close, redirect }: SigninModalProps) {
     setLoading(true);
     await authClient["signUp"].email(
       { ...credentials },
+      {
+        onSuccess: () => {
+          if (redirect) {
+            window.open(`http://${redirect}.${root}`, "_self");
+          } else {
+            window.location.reload();
+          }
+        },
+        onError: (ctx) => {
+          setError(ctx.error.message);
+          setLoading(false);
+        },
+      },
+    );
+  }
+
+  async function handleGuest() {
+    const rand = crypto.randomUUID();
+    await authClient["signUp"].email(
+      {
+        email: rand.slice(0, 20) + "@macweb.com",
+        password: rand,
+        name: "Guest",
+      },
       {
         onSuccess: () => {
           if (redirect) {
@@ -200,6 +225,14 @@ function SigninModal({ close, redirect }: SigninModalProps) {
             </span>
           </div>
           <div className="flex flex-col gap-y-2 w-full">
+            <div
+              onClick={handleGuest}
+              className="bg-blue-600 rounded w-full text-white text-lg cursor-pointer py-2 font-bold
+         hover:bg-blue-700 duration-300 text-center flex items-center justify-center gap-x-3"
+            >
+              <FaUser size={17} />
+              Guest Mode
+            </div>
             {oAuthProviders.map((provider: string, i: number) => {
               const capitalized = provider[0].toUpperCase() + provider.slice(1);
               return (

@@ -21,6 +21,7 @@ export default async function Page() {
         <div className="flex justify-center gap-7 flex-wrap px-5 lg:px-25">
           <Card name="MacVG" src="/logos/macvg.png" />
           <Card name="MacLearn" src="/logos/maclearn.png" />
+          <Card name="MacForms" src="/logos/macforms.png" />
           {/* <Card name="MacIdeas" src="/logos/macideas.png" />
           <Card name="MacTools" src="/logos/mactools.png" />
           <Card name="MacBlog" src="/logos/macblog.png" /> */}
@@ -47,6 +48,14 @@ export default async function Page() {
         app="maclearn"
         color="#2949AE"
         img="/logos/maclearn.png"
+      />
+      <Section
+        title="MacForms, the powerful form creation tool"
+        description="MacForms has a lot of features and customization options for you to customize your forms, including multiple choice, multi select, short answer, and long answer questions, as well as settings for publishing forms, assigning quizzes/correct answers, inviting collaborators to edit them, and changing the form's presentation."
+        app="macforms"
+        color="#17A44A"
+        img="/logos/macforms.png"
+        odd
       />
       {/* <Section
         title="MacIdeas, the ultimate productivity tool"

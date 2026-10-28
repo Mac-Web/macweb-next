@@ -6,7 +6,7 @@ import Hero from "@/components/layout/Hero";
 import PostCard from "@/components/ui/PostCard";
 import Link from "next/link";
 
-const apps = ["macvg", "maclearn", "macweb"];
+const apps = ["macvg", "maclearn", "macforms", "macweb"];
 
 async function getAppData(app: string): Promise<AppType> {
   if (!apps.includes(app)) notFound();
@@ -15,7 +15,11 @@ async function getAppData(app: string): Promise<AppType> {
   return JSON.parse(fileContent) as AppType;
 }
 
-export async function generateMetadata({ params }: { params: { app: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { app: string };
+}) {
   const { app } = await params;
   const appData = await getAppData(app);
   const title = `About ${appData.name} | MacWeb`;
@@ -51,31 +55,35 @@ async function Page({ params }: { params: { app: string } }) {
       <Hero title={appData.name} description={appData.description} />
       <h2 className="text-center text-2xl font-bold">Tips & Documentation</h2>
       <div className="flex justify-center gap-x-7 flex-wrap">
-        {appTips.map((post) => {
-          return (
-            <PostCard
-              key={post.id}
-              img={"/logos/" + appData.logo}
-              href={`/apps/${app}/tips/${post.slug}`}
-              title={post.sidetitle || post.title}
-              description={post.description || post.date}
-            />
-          );
-        })}
+        {appTips.length > 0
+          ? appTips.map((post) => {
+              return (
+                <PostCard
+                  key={post.id}
+                  img={"/logos/" + appData.logo}
+                  href={`/apps/${app}/tips/${post.slug}`}
+                  title={post.sidetitle || post.title}
+                  description={post.description || post.date}
+                />
+              );
+            })
+          : "Nothing here yet"}
       </div>
       <h2 className="text-center text-2xl font-bold">Updates</h2>
       <div className="flex justify-center gap-7 flex-wrap">
-        {appUpdates.slice(0, 4).map((post) => {
-          return (
-            <PostCard
-              key={post.id}
-              img={"/logos/" + appData.logo}
-              href={`/apps/${app}/updates/${post.slug}`}
-              title={post.sidetitle || post.title}
-              description={post.description || post.date}
-            />
-          );
-        })}
+        {appUpdates.length > 0
+          ? appUpdates.slice(0, 4).map((post) => {
+              return (
+                <PostCard
+                  key={post.id}
+                  img={"/logos/" + appData.logo}
+                  href={`/apps/${app}/updates/${post.slug}`}
+                  title={post.sidetitle || post.title}
+                  description={post.description || post.date}
+                />
+              );
+            })
+          : "Nothing here yet"}
       </div>
       {appUpdates.length > 4 && (
         <Link

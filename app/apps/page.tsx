@@ -4,11 +4,13 @@ import PostCard from "@/components/ui/PostCard";
 
 export const metadata: Metadata = {
   title: "Apps | MacWeb",
-  description: "Check out more information on our apps and future projects here!",
+  description:
+    "Check out more information on our apps and future projects here!",
   authors: [{ name: "MacWeb", url: "https://macweb.app" }],
   openGraph: {
     title: "Apps | MacWeb",
-    description: "Check out more information on our apps and future projects here!",
+    description:
+      "Check out more information on our apps and future projects here!",
     url: "https://macweb.app/apps",
     siteName: "MacWeb",
     images: [
@@ -25,7 +27,10 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <div className="flex flex-col items-center gap-y-10 mb-10">
-      <Hero title="MacWeb Apps" description="Check out more information on our apps and future projects here!" />
+      <Hero
+        title="MacWeb Apps"
+        description="Check out more information on our apps and future projects here!"
+      />
       <div className="flex justify-center gap-x-7 flex-wrap px-25">
         <PostCard
           img="/logos/macvg.png"
@@ -38,6 +43,12 @@ function Page() {
           href="/apps/maclearn"
           title="MacLearn"
           description="Learn, strengthen, and master new web development skills"
+        />
+        <PostCard
+          img="/logos/macforms.png"
+          href="https://macforms.macweb.app"
+          title="MacForms"
+          description="Easily create fully customized forms and surveys"
         />
         <PostCard
           img="/logos/macweb.png"

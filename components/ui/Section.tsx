@@ -49,11 +49,16 @@ function Section({ title, description, app, color, img, odd }: SectionProps) {
           width={200}
           height={200}
           className="drop-shadow-gray-300 transition-all hover:scale-105 w-50 h-50"
+          unoptimized
         />
       )}
       <div className="flex flex-col gap-y-7">
-        <h2 className="text-black dark:text-white text-3xl font-bold">{title}</h2>
-        <p className="text-gray-900 dark:text-gray-100 text-lg">{description}</p>
+        <h2 className="text-black dark:text-white text-3xl font-bold">
+          {title}
+        </h2>
+        <p className="text-gray-900 dark:text-gray-100 text-lg">
+          {description}
+        </p>
         <div className="flex gap-x-7">
           {app != "macweb" && (
             <motion.a
